@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a16c3c541bd99241cab1c21ce8e83ac",
+    "content-hash": "5db926f7bc70a05939d9210438bced82",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1653,6 +1653,70 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "packages/system",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/system",
+                "reference": "7abe48ef5a37c2af08c249915bbdee4dc0759cc1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Packages\\System\\Providers\\SystemServiceProvider",
+                        "Packages\\System\\Providers\\SystemSettingServiceProvider",
+                        "Packages\\System\\Providers\\SystemArticleServiceProvider",
+                        "Packages\\System\\Providers\\SystemCountyServiceProvider",
+                        "Packages\\System\\Providers\\SystemRegionServiceProvider",
+                        "Packages\\System\\Providers\\SystemUserServiceProvider",
+                        "Packages\\System\\Providers\\EventServiceProvider",
+                        "Packages\\System\\Providers\\FacadesServiceProvider",
+                        "Packages\\System\\Providers\\RouteServiceProvider"
+                    ],
+                    "aliases": {
+                        "PackagesSystemSettings": "Packages\\System\\Facades\\SystemSettings"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Helpers/helpers.php"
+                ],
+                "psr-4": {
+                    "Packages\\System\\": "src/",
+                    "Packages\\System\\Console\\Commands\\": "src/Commands/",
+                    "Packages\\System\\Database\\Seeds\\": "src/database/seeds/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Packages\\System\\": "src/",
+                    "Packages\\System\\Console\\Commands\\": "src/Commands/",
+                    "Packages\\System\\Database\\Seeds\\": "src/database/seeds/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric",
+                    "email": "diaz@gmail.com"
+                }
+            ],
+            "description": "descripcion",
+            "keywords": [
+                "laravel",
+                "packages",
+                "system"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "phpoption/phpoption",
@@ -7331,7 +7395,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "packages/system": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

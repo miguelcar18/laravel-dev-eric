@@ -1,0 +1,54 @@
+{
+    "name": "packages/system",
+    "description": "descripcion",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric",
+            "email": "diaz@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": ["laravel","system","packages"],
+    "require": {
+
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Packages\\System\\": "src/",
+            "Packages\\System\\Console\\Commands\\": "src/Commands/",
+            "Packages\\System\\Database\\Seeds\\": "src/database/seeds/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Packages\\System\\": "src/",
+            "Packages\\System\\Console\\Commands\\": "src/Commands/",
+            "Packages\\System\\Database\\Seeds\\": "src/database/seeds/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Packages\\System\\Providers\\SystemServiceProvider",
+                "Packages\\System\\Providers\\SystemSettingServiceProvider",
+                "Packages\\System\\Providers\\SystemArticleServiceProvider",
+                "Packages\\System\\Providers\\SystemCountyServiceProvider",
+                "Packages\\System\\Providers\\SystemRegionServiceProvider",
+                "Packages\\System\\Providers\\SystemUserServiceProvider",
+                "Packages\\System\\Providers\\EventServiceProvider",
+                "Packages\\System\\Providers\\FacadesServiceProvider",
+                "Packages\\System\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+                "PackagesSystemSettings": "Packages\\System\\Facades\\SystemSettings"
+            }
+        }
+    }
+}
