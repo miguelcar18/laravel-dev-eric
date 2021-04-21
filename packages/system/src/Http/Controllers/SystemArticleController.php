@@ -2,6 +2,7 @@
 
 namespace Packages\System\Http\Controllers;
 
+use Packages\System\Http\Requests\SystemArticlesRequest;
 use Packages\System\Models\SystemArticle;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class SystemArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SystemArticlesRequest $request)
     {
 //        dd($request);
         $article = new SystemArticle;

@@ -3,6 +3,7 @@
 
 use Packages\System\Http\Controllers\SystemUserController;
 use Packages\System\Http\Controllers\SystemArticleController;
+
 //use Illuminate\Routing\Route;
 
 /*
@@ -29,10 +30,21 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 ////    Route::post('quote-result', ['as' => 'quote-result', 'uses' => 'SystemController@quote']);
 //});
 
-Route::prefix('system')->group(function (){
-    Route::resource('users', SystemUserController::class);
-    Route::resource('articles', SystemArticleController::class);
-    Route::get('/', function (){
-        return view('test::index');
+//Route::prefix('system')->group(function (){
+//    Route::resource('users', SystemUserController::class);
+//    Route::resource('articles', SystemArticleController::class);
+//    Route::get('/', function (){
+//        return view('test::index');
+//    });
+//});
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::prefix('system')->group(function () {
+        Route::resource('users', SystemUserController::class);
+        Route::resource('articles', SystemArticleController::class);
+        Route::get('/', function () {
+            return view('test::index');
+        });
     });
 });

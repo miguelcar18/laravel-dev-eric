@@ -416,21 +416,25 @@
 </nav>
 <div class="relative flex items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
-    <div class="col-12 container">
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <p>Corrige los siguientes errores:</p>
-                <ul>
-                    @foreach ($errors->all() as $message)
-                        <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    <div class="col-12 container ">
 
         <a href="{{ route('users.index') }}" class="btn btn-primary "> Usuarios </a>
         <br/>
-        <br/>
+
+        @if (isset($errors) && $errors->any())
+            <div class="row row justify-content-center align-items-center minh-100">
+                <div class="col-lg-8">
+                    <div class="alert alert-danger alert-alt">
+                        <strong><i class="fa fa-bug fa-fw "></i></strong><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endif
 
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <form class="form-horizontal" method="POST" action="{{ route('users.store') }}">

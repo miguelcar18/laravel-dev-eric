@@ -419,8 +419,20 @@
     <div class="col-12 container">
         <a href="{{ route('articles.index') }}" class="btn btn-primary "> Articulos </a>
         <br/>
-        <br/>
-
+        @if (isset($errors) && $errors->any())
+            <div class="row row justify-content-center align-items-center minh-100">
+                <div class="col-lg-8">
+                    <div class="alert alert-danger alert-alt">
+                        <strong><i class="fa fa-bug fa-fw "></i></strong><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <form class="form-horizontal" method="POST" action="{{ route('articles.store') }}">
                 @csrf

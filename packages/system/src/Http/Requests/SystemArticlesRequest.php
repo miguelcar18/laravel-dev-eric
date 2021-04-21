@@ -4,8 +4,7 @@ namespace Packages\System\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class SystemUserRequest extends FormRequest
+class SystemArticlesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,27 +24,27 @@ class SystemUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  =>  'required',
-            'email' =>  'required',
-            'password'  =>  'required'
+            'title'  =>  'required',
+            'author' =>  'required',
+            'body'  =>  'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' =>  'El :attribute es obligatorio.',
-            'email.required'    =>  'El :attribute es obligatorio',
-            'password.required' =>  'El :attribute es obligatorio'
+            'title.required' =>  'El :attribute es obligatorio.',
+            'author.required'    =>  'El :attribute es obligatorio',
+            'body.required' =>  'El :attribute es obligatorio'
         ];
     }
 
     public function attributes()
     {
         return [
-            'name'  =>  'nombre',
-            'email' =>  'correo',
-            'password'  =>  'contraseña'
+            'title'  =>  'titulo',
+            'author' =>  'autor',
+            'body'  =>  'cuerpo'
         ];
     }
 }
