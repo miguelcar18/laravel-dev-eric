@@ -26,13 +26,13 @@ class SystemUserRequest extends FormRequest
     {
         return [
             'rut'  =>  'required',
-            'name'  =>  'required',
-            'maternalName'  =>  'required',
-            'paternalName'  =>  'required',
-            'phone'  =>  'required',
-            'mobile'  =>  'required',
-            'email'  =>  'required',
-            'nationality'  =>  'required',
+            'name'  =>  'required|string',
+            'maternalName'  =>  'required|string',
+            'paternalName'  =>  'required|string',
+            'phone'  =>  'required|numeric',
+            'mobile'  =>  'numeric',
+            'email'  =>  'email',
+            'nationality'  =>  'required|boolean',
             'password'  =>  'required',
         ];
     }
@@ -45,7 +45,9 @@ class SystemUserRequest extends FormRequest
             'maternalName.required' =>  'El :attribute es obligatorio.',
             'paternalName.required' =>  'El :attribute es obligatorio.',
             'phone.required' =>  'El :attribute es obligatorio.',
-            'mobile.required' =>  'El :attribute es obligatorio.',
+            'phone.numeric' =>  'El :attribute debe ser un número.',
+            'mobile.required' =>  'El :attribute debe ser un número..',
+            'mobile.numeric' =>  'El :attribute debe ser un número.',
             'email.required' =>  'El :attribute es obligatorio.',
             'nationality.required' =>  'El :attribute es obligatorio.',
             'password.required' =>  'El :attribute es obligatorio.',
