@@ -441,11 +441,11 @@
                         <form action="{{ route('articles.destroy', $article->id) }}" method="post">
                             @csrf
                             @method('delete')
-                        <botton href="{{ route('articles.edit',$article->id) }}">
+                        <botton class="btn btn-primary"href="{{ route('articles.edit',$article->id) }}">
                             <i class="bi bi-pencil-square"></i>
                         </botton>
                         &nbsp;
-                        <botton href="{{ route('articles.show',$article->id) }}">
+                        <botton class="btn btn-info"href="{{ route('articles.show',$article->id) }}">
                             <i class="bi bi-card-text"></i>
                         </botton>
                         &nbsp;
@@ -458,7 +458,7 @@
 {{--                        </form>
                             sugerido por miguel    --}}
                         {{--    Mi forma de hacer    --}}
-                            <button rel="tooltip"
+                            <button rel="tooltip" class="btn btn-danger"
                                      data-original-title="" title=""
                                      onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
                                          this.parentElement.submit() : ''">

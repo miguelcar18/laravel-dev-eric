@@ -2,7 +2,7 @@
 
 namespace Packages\System\Observers;
 
-use Packages\System\Models\SystemArticles;
+use Packages\System\Models\SystemArticle;
 use Uuid;
 
 class SystemArticleObserver

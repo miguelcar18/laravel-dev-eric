@@ -3,6 +3,7 @@
 namespace Packages\System\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Ramsey\Uuid\Uuid;
 
 class SystemArticleServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,6 @@ class SystemArticleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        \Packages\System\Models\SystemArticle::observer(\Packages\System\Observers\SystemArticleObserver::class);
+        \Packages\System\Models\SystemArticle::observe(\Packages\System\Observers\SystemArticleObserver::class);
     }
 }

@@ -428,19 +428,58 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Nombres</label>
-                        <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Pedro Perez">
+                        <label for="inputPassword4">Rut</label>
+                        <input type="text" name="rut" class="form-control" value="{{$user->rut}}" placeholder="15.148.156-R">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Email</label>
-                        <input type="text" name="email" class="form-control" value="{{ $user->email }}" placeholder="pedroP@gmail.com">
+                        <label for="inputEmail4">Nombre</label>
+                        <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Cheo">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Apellido Materno</label>
+                        <input type="text" name="maternalName" value="{{ $user->maternalName }}" class="form-control" placeholder="Perez">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Apellido Paterno</label>
+                        <input type="text" name="paternalName" value="{{ $user->paternalName }}" class="form-control" placeholder="Gonzalez">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Password</label>
-                    <input type="password" class="form-control" name="password" value="{{$user->password}}" >
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Tel&eacutefono Fijo</label>
+                        <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" placeholder="5845618154">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Tel&eacute;fono Movil</label>
+                        <input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control" placeholder="+594816511513">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" value="{{ $user->email }}" class="form-control" placeholder="josePerez@gmail.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Clave</label>
+                        <input type="password" name="password" value="{{ $user->password }}" class="form-control" placeholder="·············">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nacionalidad</label>
+                        <select class="form-control" name="nationality" aria-label="Default select example">
+                            <option selected>Seleccione...</option>
+                            <option value="1">Chileno</option>
+                            <option value="0">Extrangero</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                    </div>
+                </div>
             </form>
         </div>
 

@@ -29,8 +29,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 //    Route::get('quote-test', ['as' => 'quote-test', 'uses' => 'SystemController@index']);
 ////    Route::post('quote-result', ['as' => 'quote-result', 'uses' => 'SystemController@quote']);
 //});
-
-//Route::prefix('system')->group(function (){
+//
+//Route::prefix('system')->group(['middleware' => ['web']],function (){
 //    Route::resource('users', SystemUserController::class);
 //    Route::resource('articles', SystemArticleController::class);
 //    Route::get('/', function (){

@@ -11,7 +11,8 @@
     "minimum-stability": "stable",
     "keywords": ["laravel","system","packages"],
     "require": {
-
+        "ramsey/uuid-doctrine": "^1.5",
+        "webpatser/laravel-uuid": "^3.0"
     },
     "require-dev": {
 

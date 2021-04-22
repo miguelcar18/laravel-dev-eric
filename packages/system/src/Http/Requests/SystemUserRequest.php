@@ -25,27 +25,45 @@ class SystemUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'rut'  =>  'required',
             'name'  =>  'required',
-            'email' =>  'required',
-            'password'  =>  'required'
+            'maternalName'  =>  'required',
+            'paternalName'  =>  'required',
+            'phone'  =>  'required',
+            'mobile'  =>  'required',
+            'email'  =>  'required',
+            'nationality'  =>  'required',
+            'password'  =>  'required',
         ];
     }
 
     public function messages()
     {
         return [
+            'rut.required' =>  'El :attribute es obligatorio.',
             'name.required' =>  'El :attribute es obligatorio.',
-            'email.required'    =>  'El :attribute es obligatorio',
-            'password.required' =>  'El :attribute es obligatorio'
+            'maternalName.required' =>  'El :attribute es obligatorio.',
+            'paternalName.required' =>  'El :attribute es obligatorio.',
+            'phone.required' =>  'El :attribute es obligatorio.',
+            'mobile.required' =>  'El :attribute es obligatorio.',
+            'email.required' =>  'El :attribute es obligatorio.',
+            'nationality.required' =>  'El :attribute es obligatorio.',
+            'password.required' =>  'El :attribute es obligatorio.',
         ];
     }
 
     public function attributes()
     {
         return [
+            'rut'  =>  'rut',
             'name'  =>  'nombre',
-            'email' =>  'correo',
-            'password'  =>  'contraseña'
+            'paternalName'  =>  'apellido paterno',
+            'maternalName'  =>  'apellido materno',
+            'phone'  =>  'teléfono fijo',
+            'mobile'  =>  'teléfono movil',
+            'email'  =>  'correo',
+            'nationality'  =>  'nacionalidad',
+            'password'  =>  'clave',
         ];
     }
 }

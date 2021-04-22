@@ -15,7 +15,8 @@ class SystemUserController extends Controller
      */
     public function index()
     {
-        $user = SystemUser::orderBy('id','DESC')->paginate(10);
+        $user = SystemUser::orderBy('created_at','DESC')->paginate(10);
+//        dd($user);
 
         return view('test::users.index')->with('users',$user);
     }
@@ -38,11 +39,16 @@ class SystemUserController extends Controller
      */
     public function store(SystemUserRequest $request)
     {
-//        dd($request);
         $user = new SystemUser;
+        $user->rut = $request->rut;
         $user->name = $request->name;
+        $user->maternalName = $request->maternalName;
+        $user->paternalName = $request->paternalName;
+        $user->phone = $request->phone;
+        $user->mobile = $request->mobile;
         $user->email = $request->email;
         $user->password = $request->password;
+        $user->nationality = $request->nationality;
         $user->save();
 
         return redirect()->route('users.index');

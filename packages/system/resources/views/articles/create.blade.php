@@ -446,12 +446,13 @@
                         <label for="inputPassword4">Autor</label>
                         <input type="text" name="author" class="form-control" placeholder="Andres Sojo">
                     </div>
-                </div>
-                <div class="form-group">
+
+                <div class="form-group col-md-12">
                     <label for="inputAddress">Cuerpo</label>
                     <textarea type="text" class="form-control" col="3" name="body"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
             </form>
         </div>
 

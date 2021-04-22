@@ -399,7 +399,8 @@
 <body class="antialiased ">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -442,19 +443,58 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Nombre</label>
-                        <input type="text" name="name" class="form-control" placeholder="Jose Perez">
+                        <label for="inputPassword4">Rut</label>
+                        <input type="text" name="rut" class="form-control" placeholder="15.148.156-R">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="joseperez@gmail.com">
+                        <label for="inputEmail4">Nombre</label>
+                        <input type="text" name="name" class="form-control" placeholder="Cheo">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Apellido Materno</label>
+                        <input type="text" name="maternalName" class="form-control" placeholder="Perez">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Apellido Paterno</label>
+                        <input type="text" name="paternalName" class="form-control" placeholder="Gonzalez">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Password</label>
-                    <input type="password" class="form-control" name="password">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Tel&eacutefono Fijo</label>
+                        <input type="text" name="phone" class="form-control" placeholder="5845618154">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Tel&eacute;fono Movil</label>
+                        <input type="text" name="mobile" class="form-control" placeholder="+594816511513">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Crear</button>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="josePerez@gmail.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Clave</label>
+                        <input type="password" name="password" class="form-control" placeholder="·············">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nacionalidad</label>
+                        <select class="form-control" name="nationality" aria-label="Default select example">
+                            <option selected>Seleccione...</option>
+                            <option value="1">Chileno</option>
+                            <option value="0">Extranjero</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                    </div>
+                </div>
             </form>
         </div>
 
@@ -472,3 +512,19 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

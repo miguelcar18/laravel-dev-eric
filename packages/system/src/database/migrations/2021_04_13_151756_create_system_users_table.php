@@ -14,10 +14,16 @@ class CreateSystemUsersTable extends Migration
     public function up()
     {
         Schema::create('system_users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('password');
-            $table->string('email');
+            $table->uuid('id')->primary();
+            $table->string('rut')->nullable();
+            $table->string('name')->nullable();
+            $table->string('maternalName')->nullable();
+            $table->string('paternalName')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('email')->nullable();
+            $table->string('nationality')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

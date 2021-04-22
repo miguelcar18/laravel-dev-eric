@@ -10,6 +10,9 @@ class SystemUserObserver
     public function creating(SystemUser $systemUser)
     {
         $systemUser->id = $systemUser->id ?: (string) Uuid::generate(4);
+        if ($systemUser->nationality == 0){
+            $systemUser->phone = '';
+        }
     }
 
     /**

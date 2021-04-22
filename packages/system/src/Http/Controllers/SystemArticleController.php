@@ -15,8 +15,7 @@ class SystemArticleController extends Controller
      */
     public function index()
     {
-//        $article = SystemArticle::orderBy('id','DESC')->paginate(10);
-        $article = SystemArticle::orderBy('id','DESC')->paginate(10);
+        $article = SystemArticle::orderBy('created_at','DESC')->paginate(10);
 
         return view('test::articles.index')->with('articles',$article);
     }

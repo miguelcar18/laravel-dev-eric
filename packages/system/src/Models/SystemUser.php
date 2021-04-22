@@ -10,8 +10,15 @@ class SystemUser extends Model
     use HasFactory;
 
     protected $fillable =   [
+        'id',
+        'rut',
         'name',
-        'password',
+        'maternalName',
+        'paternalName',
+        'phone',
+        'mobile',
         'email',
+        'nationality',
+        'password',
     ];
 }

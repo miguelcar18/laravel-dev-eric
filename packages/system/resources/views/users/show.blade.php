@@ -428,17 +428,57 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Nombres</label>
-                        <input type="text" name="name" value="{{ $user->name }}" class="form-control" readonly placeholder="Pedro Perez">
+                        <label for="inputPassword4">Rut</label>
+                        <input type="text" name="rut" class="form-control" value="{{$user->rut}}" readonly placeholder="15.148.156-R">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Email</label>
-                        <input type="text" name="email" class="form-control" value="{{ $user->email }}" readonly placeholder="pedroP@gmail.com">
+                        <label for="inputEmail4">Nombre</label>
+                        <input type="text" name="name" value="{{ $user->name }}" class="form-control" readonly placeholder="Cheo">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Apellido Materno</label>
+                        <input type="text" name="maternalName" value="{{ $user->maternalName }}" class="form-control" placeholder="Perez">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Apellido Paterno</label>
+                        <input type="text" name="paternalName" value="{{ $user->paternalName }}" class="form-control" placeholder="Gonzalez">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Password</label>
-                    <input type="password" class="form-control" name="password" readonly value="{{$user->password}}" >
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Tel&eacutefono Fijo</label>
+                        <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" readonly placeholder="5845618154">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Tel&eacute;fono Movil</label>
+                        <input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control" readonly placeholder="+594816511513">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" value="{{ $user->email }}" class="form-control" readonly placeholder="josePerez@gmail.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Clave</label>
+                        <input type="password" name="password" value="{{ $user->password }}" class="form-control" readonly placeholder="·············">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nacionalidad</label>
+                        @if($user->nationality == 1)
+                        <input type="text" name="nationality" value="Chileno" class="form-control" readonly placeholder="·············">
+                        @else
+                        <input type="text" name="nationality" value="Extranjero" class="form-control" readonly placeholder="·············">
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -23,6 +23,6 @@ class SystemUserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        \Packages\System\Models\SystemUser::observe(\Packages\System\Observers\SystemUserObserver::class);
+        \Packages\System\Models\SystemUser::observe(\Packages\System\Observers\SystemUserObserver::class);
     }
 }
