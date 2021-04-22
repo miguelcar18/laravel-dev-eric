@@ -432,6 +432,7 @@
             </thead>
             <tbody>
             @foreach($users as $user)
+
                 <tr>
                     <th class="text-center">{{ $user->id }}</th>
                     <td class="text-center">{{$user->name}}</td>

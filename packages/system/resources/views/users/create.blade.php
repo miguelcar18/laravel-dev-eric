@@ -492,7 +492,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-                        <button type="submit" class="btn btn-primary">Crear</button>
+                        <button type="submit" class="btn btn-primary mt-2">Crear</button>
                     </div>
                 </div>
             </form>
