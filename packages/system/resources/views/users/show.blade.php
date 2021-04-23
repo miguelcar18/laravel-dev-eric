@@ -440,11 +440,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Apellido Materno</label>
-                        <input type="text" name="maternalName" value="{{ $user->maternalName }}" class="form-control" placeholder="Perez">
+                        <input type="text" name="maternalName" value="{{ $user->maternalName }}" readonly class="form-control" placeholder="Perez">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Apellido Paterno</label>
-                        <input type="text" name="paternalName" value="{{ $user->paternalName }}" class="form-control" placeholder="Gonzalez">
+                        <input type="text" name="paternalName" value="{{ $user->paternalName }}" readonly class="form-control" placeholder="Gonzalez">
                     </div>
                 </div>
                 <div class="form-row">
@@ -475,9 +475,6 @@
                         @else
                         <input type="text" name="nationality" value="Extranjero" class="form-control" readonly placeholder="·············">
                         @endif
-                    </div>
-                    <div class="form-group col-md-6 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-                        <button type="submit" class="btn btn-primary">Crear</button>
                     </div>
                 </div>
             </form>

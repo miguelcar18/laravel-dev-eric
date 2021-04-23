@@ -440,24 +440,19 @@
                         <form action="{{ route('users.destroy', $user->id) }}" method="post">
                             @csrf
                             @method('delete')
-
                             <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             &nbsp;
                             <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">
                                 <i class="bi bi-person-badge"></i>
-                            </a>
-                            &nbsp;
-                            {{--eliminar--}}
-                            <a class="btn btn-danger" rel="tooltip" data-original-title="" title=""
-                                    onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
+                            </a>                            &nbsp;
+                            <a rel="tooltip" class="btn btn-danger"
+                               data-original-title="" title=""
+                                    onclick="confirm('Esta seguro que desea eliminar este usuario?') ?
                                         this.parentElement.submit() : ''">
                                 <i class="bi bi-trash"></i>
                             </a>
-                            {{--                        <a href="{{ route('users.destroy',$user->id) }}">--}}
-                            {{--                            <i class="bi bi-trash"></i>--}}
-                            {{--                        </a>--}}
                         </form>
                     </td>
                 </tr>

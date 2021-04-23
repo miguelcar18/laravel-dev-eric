@@ -451,12 +451,11 @@
                             &nbsp;
                             <a rel="tooltip" class="btn btn-danger"
                                     data-original-title="" title=""
-                                    onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
-                                        this.parentElement.submit() : ''">
+                                    onclick="confirm('Esta seguro que desea eliminar este articulo?') ?
+                                        this.parentElement.submit():''">
                                 <i class="bi bi-trash"></i>
                             </a>
                         </form>
-                        {{--    Mi forma de hacer    --}}
                     </td>
                 </tr>
             @endforeach

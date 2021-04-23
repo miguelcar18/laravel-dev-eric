@@ -99,8 +99,10 @@ class SystemArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SystemArticle $article)
+    public function destroy($id)
     {
+        SystemArticle::destroy($id);
 
+        return redirect()->route('users.index');
     }
 }
