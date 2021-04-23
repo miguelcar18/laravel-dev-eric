@@ -3,6 +3,7 @@
 namespace Packages\System\Http\Controllers;
 
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
+use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
 use Illuminate\Http\Request;
 
@@ -87,7 +88,7 @@ class SystemUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         $user = SystemUser::findOrFail($id);
         $user->name = $request->name;

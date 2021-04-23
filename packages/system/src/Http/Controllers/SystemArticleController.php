@@ -3,6 +3,7 @@
 namespace Packages\System\Http\Controllers;
 
 use Packages\System\Http\Requests\SystemArticle\StoreRequest;
+use Packages\System\Http\Requests\SystemArticle\UpdateRequest;
 use Packages\System\Models\SystemArticle;
 use Illuminate\Http\Request;
 
@@ -81,7 +82,7 @@ class SystemArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         $article = SystemArticle::findOrFail($id);
         $article->title = $request->title;

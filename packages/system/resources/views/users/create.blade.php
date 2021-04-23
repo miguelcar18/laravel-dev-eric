@@ -444,38 +444,38 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Rut</label>
-                        <input type="text" name="rut" class="form-control" placeholder="15.148.156-R">
+                        <input type="text" name="rut" class="form-control" value="{{ old('rut') }}" placeholder="15.148.156-R">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Nombre</label>
-                        <input type="text" name="name" class="form-control" placeholder="Cheo">
+                        <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Cheo">
                     </div>
 
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Apellido Materno</label>
-                        <input type="text" name="maternalName" class="form-control" placeholder="Perez">
+                        <input type="text" name="maternalName" value="{{ old('maternalName') }}" class="form-control" placeholder="Perez">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Apellido Paterno</label>
-                        <input type="text" name="paternalName" class="form-control" placeholder="Gonzalez">
+                        <input type="text" name="paternalName" value="{{ old('paternalName') }}" class="form-control" placeholder="Gonzalez">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Tel&eacutefono Fijo</label>
-                        <input type="text" name="phone" class="form-control" placeholder="5845618154">
+                        <input type="text" name="phone" class="form-control" value="{{ old('phone') }}" placeholder="5845618154">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Tel&eacute;fono Movil</label>
-                        <input type="text" name="mobile" class="form-control" placeholder="+594816511513">
+                        <input type="text" name="mobile" class="form-control" value="{{ old('mobile') }}" placeholder="+594816511513">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="josePerez@gmail.com">
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="josePerez@gmail.com">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Clave</label>

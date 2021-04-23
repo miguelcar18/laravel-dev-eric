@@ -441,29 +441,20 @@
                         <form action="{{ route('articles.destroy', $article->id) }}" method="post">
                             @csrf
                             @method('delete')
-                        <botton class="btn btn-primary"href="{{ route('articles.edit',$article->id) }}">
-                            <i class="bi bi-pencil-square"></i>
-                        </botton>
-                        &nbsp;
-                        <botton class="btn btn-info"href="{{ route('articles.show',$article->id) }}">
-                            <i class="bi bi-card-text"></i>
-                        </botton>
-                        &nbsp;
-                        {{--    sugerido por miguel
-{{--                        <a onClick="document.getElementById(\'delete-{{ $article->id }}\').submit()">
-{{--                            <i class="bi bi-trash"></i>
-{{--                        </a>
-{{--                        <form action="{{ route('articles.destroy', $user->id) }}" style="display: none;"
-{{--                              method="POST">{{ method_field('DELETE') }}{{ csrf_field() }}--}}
-{{--                        </form>
-                            sugerido por miguel    --}}
-                        {{--    Mi forma de hacer    --}}
-                            <button rel="tooltip" class="btn btn-danger"
-                                     data-original-title="" title=""
-                                     onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
-                                         this.parentElement.submit() : ''">
+                            <a class="btn btn-primary" href="{{ route('articles.edit',$article->id) }}">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            &nbsp;
+                            <a class="btn btn-info" href="{{ route('articles.show',$article->id) }}">
+                                <i class="bi bi-card-text"></i>
+                            </a>
+                            &nbsp;
+                            <a rel="tooltip" class="btn btn-danger"
+                                    data-original-title="" title=""
+                                    onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
+                                        this.parentElement.submit() : ''">
                                 <i class="bi bi-trash"></i>
-                            </button>
+                            </a>
                         </form>
                         {{--    Mi forma de hacer    --}}
                     </td>

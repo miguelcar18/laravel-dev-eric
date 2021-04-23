@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'  =>  'required',
+            'title'  =>  'required|unique:system_articles',
             'author' =>  'required',
             'body'  =>  'required'
         ];
@@ -34,6 +34,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' =>  'El :attribute es obligatorio.',
+            'title.unique' =>  'El :attribute ya ha sido tomado.',
             'author.required'    =>  'El :attribute es obligatorio',
             'body.required' =>  'El :attribute es obligatorio'
         ];

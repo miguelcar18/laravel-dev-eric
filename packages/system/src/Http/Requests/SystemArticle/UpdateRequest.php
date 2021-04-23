@@ -24,7 +24,28 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'  =>  'required|unique:system_articles,id',
+            'author' =>  'required',
+            'body'  =>  'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' =>  'El :attribute es obligatorio.',
+            'title.unique' =>  'El :attribute ya ha sido tomado.',
+            'author.required'    =>  'El :attribute es obligatorio',
+            'body.required' =>  'El :attribute es obligatorio'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'title'  =>  'titulo',
+            'author' =>  'autor',
+            'body'  =>  'cuerpo'
         ];
     }
 }

@@ -441,20 +441,20 @@
                             @csrf
                             @method('delete')
 
-                            <botton class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">
+                            <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">
                                 <i class="bi bi-pencil-square"></i>
-                            </botton>
+                            </a>
                             &nbsp;
-                            <botton class="btn btn-info" href="{{ route('users.show',$user->id) }}">
+                            <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">
                                 <i class="bi bi-person-badge"></i>
-                            </botton>
+                            </a>
                             &nbsp;
                             {{--eliminar--}}
-                            <button class="btn btn-danger" rel="tooltip" data-original-title="" title=""
+                            <a class="btn btn-danger" rel="tooltip" data-original-title="" title=""
                                     onclick="confirm('{{ __("Esta seguro que desea eliminar este transporte?") }}') ?
                                         this.parentElement.submit() : ''">
                                 <i class="bi bi-trash"></i>
-                            </button>
+                            </a>
                             {{--                        <a href="{{ route('users.destroy',$user->id) }}">--}}
                             {{--                            <i class="bi bi-trash"></i>--}}
                             {{--                        </a>--}}
