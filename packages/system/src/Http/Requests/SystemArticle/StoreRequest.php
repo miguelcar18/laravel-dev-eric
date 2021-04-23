@@ -1,10 +1,10 @@
 <?php
 
-namespace Packages\System\Http\Requests;
+namespace Packages\System\Http\Requests\SystemArticle;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SystemArticlesRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

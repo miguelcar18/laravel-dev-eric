@@ -1,11 +1,10 @@
 <?php
 
-namespace Packages\System\Http\Requests;
+namespace Packages\System\Http\Requests\SystemUser;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class SystemUserRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,7 +31,7 @@ class SystemUserRequest extends FormRequest
             'phone'  =>  'required|numeric',
             'mobile'  =>  'numeric',
             'email'  =>  'email',
-            'nationality'  =>  'required|boolean',
+            'nationality'  =>  'required',
             'password'  =>  'required',
         ];
     }
@@ -48,7 +47,7 @@ class SystemUserRequest extends FormRequest
             'phone.numeric' =>  'El :attribute debe ser un número.',
             'mobile.required' =>  'El :attribute debe ser un número..',
             'mobile.numeric' =>  'El :attribute debe ser un número.',
-            'email.required' =>  'El :attribute es obligatorio.',
+            'email.email' =>  'El :attribute debe ser una dirección de correo electrónico válida..',
             'nationality.required' =>  'El :attribute es obligatorio.',
             'password.required' =>  'El :attribute es obligatorio.',
         ];
