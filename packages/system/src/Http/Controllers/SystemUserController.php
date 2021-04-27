@@ -51,9 +51,9 @@ class SystemUserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->nationality = $request->nationality;
-        event(new PrimerEvento($user));
         $user->save();
 
+        event(new PrimerEvento($user));
 
         return redirect()->route('users.index');
     }

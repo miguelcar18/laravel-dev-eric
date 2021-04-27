@@ -5,6 +5,8 @@ namespace Packages\System\Listeners;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
+use Packages\System\Events\PrimerEvento;
+use Packages\System\Models\SystemUser;
 
 class PrimerListener
 {
@@ -21,19 +23,13 @@ class PrimerListener
         //
     }
 
-    public function handle( $event)
+    public function handle(PrimerEvento $event)
     {
-//        $event->user;
-//        Mail::to($event->user->name)
-//            ->cc($$event->user->name)
-//            ->bcc($event->user->name)
-//            ->send(new OrderShipped($event->user->email));
-        $email = $event->user->email;
-        Mail::to($event->user->name)
+        $event->user;
+        Mail::to($event->user->email)
             ->cc($$event->user->name)
             ->bcc($event->user->name)
-            ->send($email);
-
+            ->send(new SystemUser($event->user->email));
     }
 
     public function failed()

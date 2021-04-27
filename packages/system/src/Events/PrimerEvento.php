@@ -5,7 +5,6 @@ namespace Packages\System\Events;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Packages\System\Models\SystemUser;
 
 class PrimerEvento
 {
@@ -17,7 +16,7 @@ class PrimerEvento
      *
      * @return void
      */
-    public function __construct(SystemUser $user)
+    public function __construct($user)
     {
         $this->user = $user;
     }
