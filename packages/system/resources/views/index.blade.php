@@ -397,6 +397,9 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+        .dropdown-toggle::after {
+            display:none;
+        }
     </style>
 </head>
 <body class="antialiased ">
@@ -414,6 +417,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('articles.index') }}">Articulos</a>
+            </li>
+            <li class="nav-item dropdown pull-right">
+                <a class="nav-link dropdown-toggle" href="#" id="notificaciones" role="button" data-toggle="dropdown" >
+                    <i class="bi bi-bell text-white"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="notificaciones">
+                    <a class="dropdown-item" href="#">Notificacion 1</a>
+                    <a class="dropdown-item" href="#">Notificacion 2</a>
+                    <a class="dropdown-item" href="#">Notificacion 3</a>
+                    <a class="dropdown-item" href="#">Notificacion 4</a>
+                </div>
             </li>
         </ul>
     </div>

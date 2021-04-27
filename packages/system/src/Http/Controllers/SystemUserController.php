@@ -2,6 +2,7 @@
 
 namespace Packages\System\Http\Controllers;
 
+use Packages\System\Events\PrimerEvento;
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
 use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
@@ -50,7 +51,9 @@ class SystemUserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->nationality = $request->nationality;
+        event(new PrimerEvento($user));
         $user->save();
+
 
         return redirect()->route('users.index');
     }
