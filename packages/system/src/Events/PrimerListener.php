@@ -11,6 +11,7 @@ use Packages\System\Models\SystemUser;
 class PrimerListener
 {
     use InteractsWithQueue;
+
     public $event;
 
     /**
@@ -32,9 +33,13 @@ class PrimerListener
             ->send(new SystemUser($event->user->email));
     }
 
-    public function failed()
+    public function failed(MiPrimerEvent $event, $exception)
     {
-
+        Log::error("Ha ocurrido un error al enviar el correo.", [
+            'user' => $event->user,
+            'errors' => json_encode($exception->getMessage()),
+            'code' => $exception->getCode(),
+        ]);
     }
 
     /**

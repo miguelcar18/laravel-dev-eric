@@ -112,6 +112,6 @@ class SystemUserController extends Controller
     {
         SystemUser::destroy($id);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('users.index');
     }
 }
