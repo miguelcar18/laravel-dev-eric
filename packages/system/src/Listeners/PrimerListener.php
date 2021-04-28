@@ -2,17 +2,44 @@
 
 namespace Packages\System\Listeners;
 
-use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Packages\System\Mail\SystemUser;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 use Packages\System\Events\PrimerEvento;
-use Packages\System\Models\SystemUser;
 
-class PrimerListener
+
+class PrimerListener implements ShouldQueue
 {
     use InteractsWithQueue;
 
-    public $event;
+    /**
+     * The name of the connection the job should be sent to.
+     *
+     * @var string|null
+     */
+    public $connection = 'database';
+
+    /**
+     * The name of the queue the job should be sent to.
+     *
+     * @var string|null
+     */
+    public $queue = 'default';
+
+    /**
+     * The time (seconds) before the job should be processed.
+     *
+     * @var int
+     */
+    public $delay = 60;
+
+    /**
+     * The Number of attempts to send notifications.
+     *
+     * @var int
+     */
+    public $tries = 3;
 
     /**
      * Create a new event instance.
@@ -26,11 +53,10 @@ class PrimerListener
 
     public function handle(PrimerEvento $event)
     {
-        $event->user;
         Mail::to($event->user->email)
             ->cc($$event->user->name)
             ->bcc($event->user->name)
-            ->send(new SystemUser($event->user->email));
+            ->send(new SystemUser($event->user));
     }
 
     public function failed(MiPrimerEvent $event, $exception)
@@ -47,8 +73,4 @@ class PrimerListener
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
-    {
-        return new PrivateChannel('channel-name');
-    }
 }
