@@ -37,15 +37,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Packages\\System\\Providers\\SystemServiceProvider",
-                "Packages\\System\\Providers\\SystemSettingServiceProvider",
-                "Packages\\System\\Providers\\SystemArticleServiceProvider",
-                "Packages\\System\\Providers\\SystemCountyServiceProvider",
-                "Packages\\System\\Providers\\SystemRegionServiceProvider",
-                "Packages\\System\\Providers\\SystemUserServiceProvider",
                 "Packages\\System\\Providers\\EventServiceProvider",
                 "Packages\\System\\Providers\\FacadesServiceProvider",
-                "Packages\\System\\Providers\\RouteServiceProvider"
+                "Packages\\System\\Providers\\RouteServiceProvider",
+                "Packages\\System\\Providers\\SystemServiceProvider",
+                "Packages\\System\\Providers\\SystemArticleServiceProvider",
+                "Packages\\System\\Providers\\SystemSettingServiceProvider",
+                "Packages\\System\\Providers\\SystemUserServiceProvider"
             ],
             "aliases": {
                 "PackagesSystemSettings": "Packages\\System\\Facades\\SystemSettings"
@@ -53,3 +51,4 @@
         }
     }
 }
+

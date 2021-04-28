@@ -2,11 +2,11 @@
 
 namespace Packages\System\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Packages\System\Events\PrimerEvento;
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
 use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
-use Illuminate\Http\Request;
 
 class SystemUserController extends Controller
 {
@@ -17,10 +17,10 @@ class SystemUserController extends Controller
      */
     public function index()
     {
-        $user = SystemUser::orderBy('created_at','DESC')->paginate(10);
+        $user = SystemUser::orderBy('created_at', 'DESC')->paginate(10);
 //        dd($user);
 
-        return view('test::users.index')->with('users',$user);
+        return view('test::users.index')->with('users', $user);
     }
 
     /**
@@ -68,7 +68,7 @@ class SystemUserController extends Controller
     {
         $user = SystemUser::findOrFail($id);
 
-        return view('test::users.show')->with('user',$user);
+        return view('test::users.show')->with('user', $user);
     }
 
     /**
@@ -81,7 +81,7 @@ class SystemUserController extends Controller
     {
         $user = SystemUser::findOrFail($id);
 
-        return view('test::users.edit')->with('user',$user);
+        return view('test::users.edit')->with('user', $user);
     }
 
     /**

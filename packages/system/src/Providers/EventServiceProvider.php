@@ -4,6 +4,8 @@ namespace Packages\System\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Packages\System\Events\PrimerEvento;
+use Packages\System\Listeners\PrimerListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,9 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \Packakes\System\Events\PrimerEvento::class => [
-            \Packages\System\Listeners\PrimerListener::class
-        ]
+        PrimerEvento::class => [
+            PrimerListener::class,
+        ],
     ];
 
     /**
@@ -25,6 +27,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        parent::boot();
     }
 }
