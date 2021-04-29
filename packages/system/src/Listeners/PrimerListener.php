@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Packages\System\Events\PrimerEvento;
 use Packages\System\Mail\SystemUser;
+use Packages\System\Notifications\PrimeraNotificacion;
 
 class PrimerListener implements ShouldQueue
 {
@@ -15,9 +16,7 @@ class PrimerListener implements ShouldQueue
 
     public function handle(PrimerEvento $event)
     {
-        Mail::to($event->user->email)
-            ->cc($event->user->email)
-            ->queue(new SystemUser($event->user));
+        $event->user->notify(new PrimeraNotificacion($event->user));
     }
 
     public function failed(PrimerEvento $event, $exception)

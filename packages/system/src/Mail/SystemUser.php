@@ -29,6 +29,6 @@ class SystemUser extends Mailable
      */
     public function build()
     {
-        return $this->view('test::emails.users.micorreo');
+        return $this->markdown('test::users.micorreo');
     }
 }
