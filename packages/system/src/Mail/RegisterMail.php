@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SystemUser extends Mailable
+class RegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $user;
@@ -29,6 +29,6 @@ class SystemUser extends Mailable
      */
     public function build()
     {
-        return $this->markdown('test::emails.users.micorreo');
+        return $this->markdown('test::emails.registers.correo');
     }
 }

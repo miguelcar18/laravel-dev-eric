@@ -2,25 +2,25 @@
 
 namespace Packages\System\Notifications;
 
-use Packages\System\Mail\SystemUser;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Packages\System\Mail\ArticleMail;
 
-class PrimeraNotificacion extends Notification
+class ArticleNotify extends Notification
 {
     use Queueable;
-    public $user;
+    public $users;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($users)
     {
-        $this->user = $user;
+        $this->users = $users;
     }
 
     /**
@@ -42,7 +42,7 @@ class PrimeraNotificacion extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new SystemUser($this->user))->to($notifiable->email);
+        return (new ArticleMail($this->users))->to($notifiable->email);
     }
 
     /**

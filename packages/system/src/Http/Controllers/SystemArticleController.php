@@ -2,10 +2,12 @@
 
 namespace Packages\System\Http\Controllers;
 
+use Packages\System\Events\ArticleEvent;
 use Packages\System\Http\Requests\SystemArticle\StoreRequest;
 use Packages\System\Http\Requests\SystemArticle\UpdateRequest;
 use Packages\System\Models\SystemArticle;
 use Illuminate\Http\Request;
+use Packages\System\Models\SystemUser;
 
 class SystemArticleController extends Controller
 {
@@ -44,7 +46,11 @@ class SystemArticleController extends Controller
         $article->title = $request->title;
         $article->body = $request->body;
         $article->author = $request->author;
+
+        event(new ArticleEvent($article));
+
         $article->save();
+
 
         return redirect()->route('articles.index');
     }
@@ -103,6 +109,6 @@ class SystemArticleController extends Controller
     {
         SystemArticle::destroy($id);
 
-        return redirect()->route('users.index');
+        return redirect()->route('articles.index');
     }
 }

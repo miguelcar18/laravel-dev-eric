@@ -3,7 +3,9 @@
 namespace Packages\System\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Packages\System\Events\ArticleEvent;
 use Packages\System\Events\PrimerEvento;
+use Packages\System\Events\RegisterEvent;
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
 use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
@@ -53,7 +55,9 @@ class SystemUserController extends Controller
         $user->nationality = $request->nationality;
         $user->save();
 
+        event(new RegisterEvent($user));
         event(new PrimerEvento($user));
+        event(new ArticleEvent($user));
 
         return redirect()->route('users.index');
     }

@@ -2,13 +2,14 @@
 
 namespace Packages\System\Notifications;
 
-use Packages\System\Mail\SystemUser;
+use Packages\System\Mail\RegisterMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PrimeraNotificacion extends Notification
+
+class RegisterNotify extends Notification
 {
     use Queueable;
     public $user;
@@ -42,7 +43,7 @@ class PrimeraNotificacion extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new SystemUser($this->user))->to($notifiable->email);
+        return (new RegisterMail($this->user))->to($notifiable->email);
     }
 
     /**

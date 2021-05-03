@@ -28,9 +28,4 @@ class PrimerListener implements ShouldQueue
         ]);
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
 }
