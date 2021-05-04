@@ -49,7 +49,6 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     protected function mapWebRoutes()
     {
         Route::prefix(config('system.prefix_url', 'system'))
@@ -69,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix(config('system.prefix_url', 'system'))
+        Route::prefix(config('system.prefix_url', 'system') . '/api')
             ->middleware('api')
         // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
             ->name('system::api.')

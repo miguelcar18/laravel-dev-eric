@@ -56,8 +56,8 @@ class PrimeraNotificacion extends Notification implements ShouldQueue
     {
         return [
             'link' => route('system::users.show', $this->user->id),
-            'title' => __('Perfil', $this->user->name),
-            'text' => __('Usuario creado el ', $this->user->created_at),
+            'title' => __('Perfil') . ' ' . $this->user->name,
+            'text' => __('Usuario creado el ' . $this->user->created_at),
         ];
     }
 }

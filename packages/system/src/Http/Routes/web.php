@@ -1,9 +1,5 @@
 <?php
 
-
-use Packages\System\Http\Controllers\SystemUserController;
-use Packages\System\Http\Controllers\SystemArticleController;
-
 //use Illuminate\Routing\Route;
 
 /*
@@ -25,24 +21,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
  */
 
-//Route::group(['middleware' => ['auth', 'verified', 'can_use_route']], function () {
-//    Route::get('quote-test', ['as' => 'quote-test', 'uses' => 'SystemController@index']);
-////    Route::post('quote-result', ['as' => 'quote-result', 'uses' => 'SystemController@quote']);
-//});
-//
-//Route::prefix('system')->group(['middleware' => ['web']],function (){
-//    Route::resource('users', SystemUserController::class);
-//    Route::resource('articles', SystemArticleController::class);
-//    Route::get('/', function (){
-//        return view('test::index');
-//    });
-//});
-
-
 Route::group(['middleware' => ['web']], function () {
     Route::prefix('system')->group(function () {
-        Route::resource('users', SystemUserController::class);
-        Route::resource('articles', SystemArticleController::class);
+        Route::resource('users', '\Packages\System\Http\Controllers\SystemUserController');
+        Route::resource('articles', '\Packages\System\Http\Controllers\SystemArticleController');
         Route::get('/', function () {
             return view('test::index');
         });
