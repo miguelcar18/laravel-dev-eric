@@ -10,16 +10,14 @@ use Illuminate\Queue\SerializesModels;
 class ArticleMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $users;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($users)
+    public function __construct()
     {
-        $this->users = $users;
     }
 
     /**

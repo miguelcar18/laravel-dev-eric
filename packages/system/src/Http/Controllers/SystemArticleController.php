@@ -47,7 +47,7 @@ class SystemArticleController extends Controller
         $article->body = $request->body;
         $article->author = $request->author;
 
-        event(new ArticleEvent($article));
+        event(new ArticleEvent());
 
         $article->save();
 

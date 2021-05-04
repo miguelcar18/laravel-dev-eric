@@ -19,7 +19,6 @@ class ArticleListener implements ShouldQueue
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -32,14 +31,12 @@ class ArticleListener implements ShouldQueue
     {
         $users = SystemUser::all();
 
-        $users->each->notify(new ArticleListener());
+        $users->each->notify(new ArticleNotify());
     }
 
     public function failed( ArticleEvent $event, $exception)
     {
-
         Log::error("Ha ocurrido un error al enviar el correo.",[
-            'user'  =>  $event->user,
             'errors'    =>  json_encode($exception->$exception->getMessage()),
             'code'  =>  $exception->getCode(),
         ]);

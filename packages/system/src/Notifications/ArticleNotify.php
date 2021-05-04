@@ -11,16 +11,14 @@ use Packages\System\Mail\ArticleMail;
 class ArticleNotify extends Notification
 {
     use Queueable;
-    public $users;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($users)
+    public function __construct()
     {
-        $this->users = $users;
     }
 
     /**
@@ -42,7 +40,7 @@ class ArticleNotify extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new ArticleMail($this->users))->to($notifiable->email);
+        return (new ArticleMail())->to($notifiable->email);
     }
 
     /**

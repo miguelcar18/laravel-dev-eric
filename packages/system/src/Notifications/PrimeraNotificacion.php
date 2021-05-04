@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notification;
 class PrimeraNotificacion extends Notification
 {
     use Queueable;
+
     public $user;
 
     /**
@@ -26,18 +27,18 @@ class PrimeraNotificacion extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return array
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
@@ -48,13 +49,20 @@ class PrimeraNotificacion extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return array
      */
     public function toArray($notifiable)
     {
-        return [
-            //
-        ];
+//        return [
+//            'link'  =>  route('system::users.show',$this->user->id),
+//            'title'  =>  __('Perfil',$this->user->name),
+//            'text'  =>  __('Usuario creado el ',$this->user->created_at)
+//        ];
+        return $notifiable([
+            'link' => route('system::users.show', $this->user->id),
+            'title' => __('Perfil', $this->user->name),
+            'text' => __('Usuario creado el ', $this->user->created_at)
+        ]);
     }
 }
