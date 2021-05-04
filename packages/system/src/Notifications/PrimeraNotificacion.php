@@ -2,13 +2,13 @@
 
 namespace Packages\System\Notifications;
 
-use Packages\System\Mail\SystemUser;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Packages\System\Mail\SystemUser;
 
-class PrimeraNotificacion extends Notification
+class PrimeraNotificacion extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -54,15 +54,10 @@ class PrimeraNotificacion extends Notification
      */
     public function toArray($notifiable)
     {
-//        return [
-//            'link'  =>  route('system::users.show',$this->user->id),
-//            'title'  =>  __('Perfil',$this->user->name),
-//            'text'  =>  __('Usuario creado el ',$this->user->created_at)
-//        ];
-        return $notifiable([
+        return [
             'link' => route('system::users.show', $this->user->id),
             'title' => __('Perfil', $this->user->name),
-            'text' => __('Usuario creado el ', $this->user->created_at)
-        ]);
+            'text' => __('Usuario creado el ', $this->user->created_at),
+        ];
     }
 }
