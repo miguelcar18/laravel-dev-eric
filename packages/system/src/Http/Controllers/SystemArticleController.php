@@ -8,9 +8,12 @@ use Packages\System\Http\Requests\SystemArticle\UpdateRequest;
 use Packages\System\Models\SystemArticle;
 use Illuminate\Http\Request;
 use Packages\System\Models\SystemUser;
+use Packages\System\Traits\Agregar;
 
 class SystemArticleController extends Controller
 {
+    use Agregar;
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +50,8 @@ class SystemArticleController extends Controller
         $article->body = $request->body;
         $article->author = $request->author;
 
-        event(new ArticleEvent());
+        $this->mailTrait($article);
+//        event(new ArticleEvent());
 
         $article->save();
 

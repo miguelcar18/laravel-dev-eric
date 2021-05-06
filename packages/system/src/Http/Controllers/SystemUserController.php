@@ -3,14 +3,17 @@
 namespace Packages\System\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Packages\System\Events\NewUserEvent;
 use Packages\System\Events\PrimerEvento;
 use Packages\System\Events\RegisterEvent;
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
 use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
+use Packages\System\Traits\Agregar;
 
 class SystemUserController extends Controller
 {
+    use Agregar;
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +22,10 @@ class SystemUserController extends Controller
     public function index()
     {
         $user = SystemUser::orderBy('created_at', 'DESC')->paginate(10);
-//        dd($user);
 
-        return view('test::users.index')->with('users', $user);
+        return view('test::users.index')->with([
+            'users' =>  $user,
+        ]);
     }
 
     /**
@@ -54,8 +58,10 @@ class SystemUserController extends Controller
         $user->nationality = $request->nationality;
         $user->save();
 
-        event(new RegisterEvent($user));
-        event(new PrimerEvento($user));
+        $this->mailTrait($user);
+//        event(new RegisterEvent($user));
+//        event(new PrimerEvento($user));
+//        event(new NewUserEvent($user));
 
         return redirect()->route('users.index');
     }

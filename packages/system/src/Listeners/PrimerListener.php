@@ -25,7 +25,7 @@ class PrimerListener implements ShouldQueue
             'user' => $event->user,
             'errors' => json_encode($exception->getMessage()),
             'code' => $exception->getCode(),
-        ]);
+            ]);
     }
 
 }

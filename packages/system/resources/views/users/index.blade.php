@@ -418,6 +418,7 @@
     class="relative flex items-top justify-center min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12">
+
         <a href="{{ route('users.create') }}" class="btn btn-primary "> Usuario nuevo </a>
         <br/>
         <br/>
@@ -446,10 +447,10 @@
                             &nbsp;
                             <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">
                                 <i class="bi bi-person-badge"></i>
-                            </a>                            &nbsp;
+                            </a> &nbsp;
                             <a rel="tooltip" class="btn btn-danger"
                                data-original-title="" title=""
-                                    onclick="confirm('Esta seguro que desea eliminar este usuario?') ?
+                               onclick="confirm('Esta seguro que desea eliminar este usuario?') ?
                                         this.parentElement.submit() : ''">
                                 <i class="bi bi-trash"></i>
                             </a>
