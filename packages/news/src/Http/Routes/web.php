@@ -14,17 +14,16 @@
 */
 
 
-//use Packages\System\Http\Controllers\SystemUserController;
-
-use Packages\News\Http\Controllers\ArticlesController;
-use Packages\News\Http\Controllers\AuthorsController;
+//use Packages\News\Http\Controllers\ArticleController;
+//use Packages\News\Http\Controllers\AuthorController;
 
 Route::group(['middleware' => ['web']], function () {
     Route::prefix('news')->group(function () {
-        Route::resource('authors', AuthorsController::class);
-//        Route::resource('authors', '\Packages\News\Http\Controllers\AuthorsController');
-        Route::resource('news_articles', ArticlesController::class);
-//        Route::get('/traits/mail', [AuthorsController::class,'mailNotify']);
+//        Route::resource('authors', AuthorController::class);
+        Route::resource('authors', '\Packages\News\Http\Controllers\AuthorController');
+//        Route::resource('news_articles', ArticleController::class);
+        Route::resource('news_articles', '\Packages\News\Http\Controllers\ArticleController');
+//        Route::get('/traits/mail', [AuthorController::class,'mailNotify']);
         Route::get('/', function () {
             return view('news::index');
         });

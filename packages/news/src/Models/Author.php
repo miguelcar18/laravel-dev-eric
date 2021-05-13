@@ -21,6 +21,6 @@ class Author extends BaseModel
 
     public function articles()
     {
-        $this->hasMany(Article::class,'Author_id','id');
+        return $this->hasMany(Article::class);
     }
 }

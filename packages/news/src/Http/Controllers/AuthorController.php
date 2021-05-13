@@ -9,7 +9,7 @@ use Packages\News\Http\Requests\Author\UpdateRequest;
 use Packages\News\Models\Author;
 use Packages\News\Traits\Notification;
 
-class AuthorsController extends Controller
+class AuthorController extends Controller
 {
     use Notification;
     /**

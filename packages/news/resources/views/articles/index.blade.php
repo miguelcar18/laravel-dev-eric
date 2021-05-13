@@ -437,7 +437,7 @@
                 <tr>
                     <th class="text-center">{{ $article->id }}</th>
                     <td class="text-center">{{$article->title}}</td>
-                    <td class="text-center">{{ $article->author->id }}</td>
+                    <td class="text-center">{{ $article->author->name }}</td>
                     <td class="text-center">
                         <form action="{{ route('news_articles.destroy', $article->id) }}" method="post">
                             @csrf

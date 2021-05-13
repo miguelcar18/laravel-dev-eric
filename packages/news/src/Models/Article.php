@@ -12,6 +12,7 @@ class Article extends BaseModel
     use HasFactory,Notifiable,SoftDeletes;
 
     protected $dates = ['deleted_at'];
+//    public $primaryKey = 'author_id';
     protected $fillable = [
         'title',
         'subtitle',
@@ -24,6 +25,6 @@ class Article extends BaseModel
 
     public function author()
     {
-        $this->belongsTo(Author::class,'id','author_id');
+        return $this->belongsTo(Author::class);
     }
 }

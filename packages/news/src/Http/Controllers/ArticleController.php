@@ -10,7 +10,7 @@ use Packages\News\Models\Article;
 use Packages\News\Models\Author;
 use Packages\News\Traits\Notification;
 
-class ArticlesController extends Controller
+class ArticleController extends Controller
 {
     use Notification;
     /**
