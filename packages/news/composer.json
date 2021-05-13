@@ -1,0 +1,48 @@
+{
+    "name": "packages/news",
+    "description": "noticias",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric",
+            "email": "ericdrz19@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": ["laravel","news","packages"],
+    "require": {
+        "ramsey/uuid-doctrine": "^1.6"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Packages\\News\\": "src/",
+            "Packages\\News\\Console\\Commands\\": "src/Commands/",
+            "Packages\\News\\Database\\Seeds\\": "src/database/seeds/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Packages\\News\\": "src/",
+            "Packages\\News\\Console\\Commands\\": "src/Commands",
+            "Packages\\News\\Database\\Seeds\\": "src/database/seeds"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Packages\\News\\Providers\\EventServiceProvider",
+                "Packages\\News\\Providers\\FacadesServiceProvider",
+                "Packages\\News\\Providers\\RouteServiceProvider",
+                "Packages\\News\\Providers\\NewsServiceProvider",
+                "Packages\\News\\Providers\\AuthorServiceProvider",
+                "Packages\\News\\Providers\\ArticleServiceProvider"
+            ],
+            "aliases": {
+                "PackagesSystemSettings": "Packages\\News\\Facades\\NewsSettings"
+            }
+        }
+    }
+}
