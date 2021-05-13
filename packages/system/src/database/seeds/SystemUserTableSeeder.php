@@ -15,7 +15,6 @@ class SystemUserTableSeeder extends Seeder
     public function run()
     {
         SystemUser::create([
-
             'name' => 'name1',
             'email' => 'Descripcion1@admin.com',
             'password' => '123456'

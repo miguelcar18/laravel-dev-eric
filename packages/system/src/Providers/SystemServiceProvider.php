@@ -63,7 +63,7 @@ class SystemServiceProvider extends ServiceProvider
 
     protected function publishResources()
     {
-        // // Publishing the configuration file.
+        // Publishing the configuration file.
         $this->publishes([
             __DIR__ . '/../../config/system.php' => config_path('system.php'),
         ], 'system.config');

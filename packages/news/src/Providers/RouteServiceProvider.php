@@ -1,6 +1,6 @@
 <?php
 
-namespace Packages\System\Providers;
+namespace Packages\News\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Packages\\System\\Http\\Controllers';
+    protected $namespace = 'Packages\\News\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -49,23 +49,24 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     protected function mapWebRoutes()
     {
-        Route::prefix(config('system.prefix_url', 'system'))
+        Route::prefix(config('news.prefix_url', 'news'))
             ->middleware('web')
-        // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
-            ->name('system::')
+            // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
+            ->name('news::')
             ->namespace($this->namespace)
             ->group(__DIR__ . '/../Http/Routes/web.php');
     }
 
     protected function mapApiRoutes()
     {
-        Route::prefix(config('system.prefix_url', 'system') . '/api')
+        Route::prefix(config('news.prefix_url', 'news') . '/api')
             ->middleware('api')
-        // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
-            ->name('system::api.')
-            ->namespace("{$this->namespace}\Api")
+            // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
+            ->name('news::api.')
+            ->namespace("{$this->namespace}\news")
             ->group(__DIR__ . '/../Http/Routes/api.php');
     }
 }

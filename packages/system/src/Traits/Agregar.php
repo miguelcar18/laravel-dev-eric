@@ -2,7 +2,6 @@
 
 namespace Packages\System\Traits;
 
-
 use Packages\System\Events\ArticleEvent;
 use Packages\System\Events\NewUserEvent;
 use Packages\System\Events\PrimerEvento;
