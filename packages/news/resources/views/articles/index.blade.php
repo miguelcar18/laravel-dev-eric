@@ -425,8 +425,9 @@
         <table class="table table-hover table-dark">
             <thead>
             <tr>
-                <th scope="col" class="text-center">#</th>
                 <th scope="col" class="text-center">Titulo</th>
+                <th scope="col" class="text-center">Subtitulo</th>
+                <th scope="col" class="text-center">Categoria</th>
                 <th scope="col" class="text-center">Autor</th>
                 <th scope="col" class="text-center">Acciones</th>
             </tr>
@@ -435,9 +436,10 @@
             @foreach($articles as $article)
 
                 <tr>
-                    <th class="text-center">{{ $article->id }}</th>
                     <td class="text-center">{{$article->title}}</td>
-                    <td class="text-center">{{ $article->author->name }}</td>
+                    <th class="text-center">{{ $article->subtitle }}</th>
+                    <th class="text-center">{{ $article->category }}</th>
+                    <td class="text-center">{{ $article->author->full_name }}</td>
                     <td class="text-center">
                         <form action="{{ route('news_articles.destroy', $article->id) }}" method="post">
                             @csrf

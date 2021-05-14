@@ -425,8 +425,9 @@
         <table class="table table-hover table-dark">
             <thead>
             <tr>
-                <th scope="col" class="text-center">#</th>
-                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">DNI</th>
+                <th scope="col" class="text-center">Nombre & Apellido</th>
+                <th scope="col" class="text-center">Telefono</th>
                 <th scope="col" class="text-center">Email</th>
                 <th scope="col" class="text-center">Acciones</th>
             </tr>
@@ -434,9 +435,10 @@
             <tbody>
             @foreach($authors as $author)
                 <tr>
-                    <th class="text-center">{{ $author->dni }}</th>
-                    <td class="text-center">{{$author->name}}</td>
-                    <td class="text-center">{{$author->lastName}}</td>
+                    <th class="text-center">{{ authordni($author->id) }}</th>
+                    <td class="text-center ">{{$author->full_name}}</td>
+                    <td class="text-center">{{authortlf($author->id)}}</td>
+                    <td class="text-center">{{$author->email}}</td>
                     <td class="text-center">
                         <form action="{{ route('authors.destroy', $author->id) }}" method="post">
                             @csrf

@@ -27,4 +27,27 @@ class Article extends BaseModel
     {
         return $this->belongsTo(Author::class);
     }
+
+    public function setTitleAttribute($title)
+    {
+        $this->attributes['title'] = strtoupper($title);
+    }
+
+    public function setSubtitleAttribute($subtitle)
+    {
+        // ucwords = Mayúsculas el primer carácter de cada palabra en una cadena
+        $this->attributes['subtitle'] = ucwords($subtitle);
+    }
+
+    public function setBodyAttribute($body)
+    {
+        // ucfirst = La primera letra de la cadena en mayuscula
+        $this->attributes['body'] = ucfirst($body);
+    }
+
+    public function getCategoryAttribute()
+    {
+        return (ucfirst($this->section));
+    }
+
 }

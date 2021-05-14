@@ -7,18 +7,28 @@ if (!function_exists('uuidv4')) {
     }
 }
 
-if (!function_exists('newssetting')) {
-    function newssetting($setting = null, $default_value = null)
+if (!function_exists('authortlf')) {
+    function authortlf($id)
     {
-        if (empty($setting)) {
-            return \Packages\News\Models\NewSetting::pluck('value', 'slug')->toArray();
+        $author = \Packages\News\Models\Author::find($id);
+        if (!empty($author->tlf)) {
+            $tlf = "(" . substr($author->phone, 0, 3) . ")" . " " . substr($author->phone, 5, 3) . "-" . substr($author->phone, 6, 4);
+            return $tlf;
+        } else {
+            return ('No posee un tlf');
         }
-        if (is_array($setting)) {
-            foreach ($setting as $slug => $value) {
-                \Packages\News\Models\NewSetting::updateOrCreate(compact('slug'), compact('value'));
-            }
-            return true;
+    }
+}
+
+if (!function_exists('authordni')) {
+    function authordni($id)
+    {
+        $author = \Packages\News\Models\Author::find($id);
+        if (!empty($author->dni)) {
+            $dni = substr($author->dni, 0, 2) . "." . substr($author->dni, 3, 3) . "." . substr($author->dni, 3, 3);
+            return $dni;
+        } else {
+            return ('No poee un DNI');
         }
-        return \Packages\News\Models\NewSetting::where('slug', $setting)->first()->value ?? $default_value;
     }
 }

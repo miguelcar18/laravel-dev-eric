@@ -23,4 +23,29 @@ class Author extends BaseModel
     {
         return $this->hasMany(Article::class);
     }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = strtolower($name);
+    }
+
+    public function setLastNameAttribute($lastName)
+    {
+        $this->attributes['lastName'] = strtolower($lastName);
+    }
+
+    public function getNameAttribute($name)
+    {
+        return ucfirst($name);
+    }
+
+    public function getlastNameAttribute($lastName)
+    {
+        return ucfirst($lastName);
+    }
+
+    public function getFullnameAttribute()
+    {
+        return (ucfirst($this->name).' '.ucfirst($this->lastName));
+    }
 }
