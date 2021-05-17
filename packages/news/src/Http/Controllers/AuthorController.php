@@ -7,6 +7,7 @@ use Packages\News\Events\AuthorEvent;
 use Packages\News\Http\Requests\Author\StoreRequest;
 use Packages\News\Http\Requests\Author\UpdateRequest;
 use Packages\News\Models\Author;
+use Packages\News\Rules\Phone;
 use Packages\News\Traits\Notification;
 
 class AuthorController extends Controller

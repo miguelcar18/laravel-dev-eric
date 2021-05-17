@@ -3,6 +3,7 @@
 namespace Packages\News\Http\Requests\Author;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Packages\News\Rules\Phone;
 
 class StoreRequest extends FormRequest
 {
@@ -28,7 +29,8 @@ class StoreRequest extends FormRequest
             'email' =>  'required|email',
             'name'  =>  'required|string',
             'lastName'  =>  'required|string',
-            'phone'  =>  'required|numeric',
+            'phone' =>  [new Phone(8,10)]
+//            'phone'  =>  'required|numeric|min:8',
         ];
     }
 
