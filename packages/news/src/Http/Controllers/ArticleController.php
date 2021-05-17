@@ -3,7 +3,6 @@
 namespace Packages\News\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Packages\News\Events\ArticleEvent;
 use Packages\News\Http\Requests\Article\StoreRequest;
 use Packages\News\Http\Requests\Article\UpdateRequest;
 use Packages\News\Models\Article;
@@ -33,7 +32,6 @@ class ArticleController extends Controller
     public function create()
     {
         $authors = Author::all();
-
         return view('news::articles.create')->with('authors', $authors);
     }
 
@@ -52,75 +50,64 @@ class ArticleController extends Controller
 //        event(new ArticleEvent());
         $this->mailNotify($article);
 
-        return redirect()->route('news_articles.index');
+        return redirect()->route('news::article.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  Article $article
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article)
     {
         $article = Article::findOrFail($id);
         $author = Author::findOrFail($article->author_id);
 //        dd($article,$author);
-        return view('news::articles.show')
-            ->with([
-                'article' => $article,
-                'author' => $author
-            ]);
+        return view('news::articles.show', compact('article', 'author'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  Article $article
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::findOrFail($id);
         $authors = Author::all();
-
-        return view('news::articles.edit')
-            ->with('article', $article)
-            ->with('authors', $authors);
+        return view('news::articles.edit', compact('article', 'authors'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  Article $article
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, $id)
+    public function update(UpdateRequest $request, Article $article)
     {
-        $article = Article::findOrFail($id);
-        $article->title = $request->title;
-        $article->subtitle = $request->subtitle;
-        $article->section = $request->section;
-        $article->author_id = $request->author_id;
-        $article->body = $request->body;
-        $article->update();
+        $article->update([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'section' => $request->section,
+            'author_id' => $request->author_id,
+            'body' => $request->body,
+        ]);
 
-        return redirect()->route('news_articles.index');
+        return redirect()->route('news::article.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  Article $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        $article = Article::findOrFail($id);
-
         $article->delete();
-
-        return redirect()->route('news_articles');
+        return redirect()->route('news::news_articles');
     }
 }

@@ -407,10 +407,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">Autor <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news::author.index') }}">Autor <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news_articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -419,7 +419,7 @@
     class="relative flex items-top justify-center min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12">
-        <a href="{{ route('news_articles.create') }}" class="btn btn-primary "> Articulo nuevo </a>
+        <a href="{{ route('news::article.create') }}" class="btn btn-primary "> Articulo nuevo </a>
         <br/>
         <br/>
         <table class="table table-hover table-dark">
@@ -441,14 +441,14 @@
                     <th class="text-center">{{ $article->category }}</th>
                     <td class="text-center">{{ $article->author->full_name }}</td>
                     <td class="text-center">
-                        <form action="{{ route('news_articles.destroy', $article->id) }}" method="post">
+                        <form action="{{ route('news::article.destroy', $article->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <a class="btn btn-primary" href="{{ route('news_articles.edit',$article->id) }}">
+                            <a class="btn btn-primary" href="{{ route('news::article.edit',$article->id) }}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             &nbsp;
-                            <a class="btn btn-info" href="{{ route('news_articles.show',$article->id) }}">
+                            <a class="btn btn-info" href="{{ route('news::article.show',$article->id) }}">
                                 <i class="bi bi-card-text"></i>
                             </a>
                             &nbsp;

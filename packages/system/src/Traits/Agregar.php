@@ -12,16 +12,16 @@ trait Agregar
     public function mailTrait($data)
     {
 //        dd($data);
-        if ($data->rut <> null ){
+        if ($data->rut != null) {
             event(new NewUserEvent($data));
             event(new PrimerEvento($data));
             event(new RegisterEvent($data));
-            return redirect()->route('users.index');
+            return redirect()->route('system::users.index');
 
-        } else if($data->title <> null) {
+        } else if ($data->title != null) {
 //            dd('es un articulo', $data);
             event(new ArticleEvent());
-            return redirect()->route('articles.index');
+            return redirect()->route('system::articles.index');
         }
     }
 }

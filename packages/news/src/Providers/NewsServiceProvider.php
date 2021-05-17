@@ -2,21 +2,11 @@
 
 namespace Packages\News\Providers;
 
-use Packages\News\Console\Commands\NewsSeed;
 use Illuminate\Support\ServiceProvider;
+use Packages\News\Console\Commands\NewsSeed;
 
 class NewsServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/config.php','news');
-    }
-
     /**
      * Bootstrap services.
      *
@@ -25,21 +15,23 @@ class NewsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadResources();
-        $this->loadRoutesFrom(__DIR__ . '/../Http/Routes/web.php');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang','es');
+        $this->registerCommands();
 
-        $this->publishes([
-            __DIR__ . '/../../resources/lang'   =>  resource_path('lang/vendor/es')
-        ]);
-
-        $this->loadViewsFrom(__DIR__.'/../../resources/views','news');
         // Publishing is only necessary when using the CLI.
-        if($this->app->runningInConsole())
-        {
+        if ($this->app->runningInConsole()) {
             $this->publishResources();
             $this->registerCommands();
         }
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../../config/news.php', 'news');
     }
 
     /**
@@ -55,35 +47,42 @@ class NewsServiceProvider extends ServiceProvider
     public function loadResources()
     {
         $this->loadMigrationsFrom([
-            __DIR__.'/../database/migrations',
+            __DIR__ . '/../database/migrations',
         ]);
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang','news');
+        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'news');
         $this->loadJsonTranslationsFrom(__DIR__ . '/../../resources/lang');
-        $this->loadViewsFrom(__DIR__.'/../../resources/views','news');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'news');
     }
 
     public function publishResources()
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../../config/config.php'  => config_path('config.php')
+            __DIR__ . '/../../config/news.php' => config_path('news.php'),
         ], 'news.config');
 
         // Publishing the views.
         $this->publishes([
-            __DIR__.'/../../resources/lang' =>  resource_path('lang/vendor/news')
-        ]);
+            __DIR__ . '/../../resources/views' => resource_path('views/vendor/news'),
+        ], 'news.views');
 
         // Publishing the translation files.
         $this->publishes([
-            __DIR__.'/../../resources/lang' =>  resource_path('lang/vendor/news')
+            __DIR__ . '/../../resources/lang' => resource_path('lang/vendor/news'),
         ], 'news.lang');
+
+        // Publishing assets.
+        $this->publishes([
+            __DIR__ . '/../../resources/assets' => public_path('vendor/news'),
+        ], 'news.assets');
     }
 
     protected function registerCommands()
     {
         $this->commands([
-            NewsSeed::class
+            NewsSeed::class,
         ]);
+
+        return $this;
     }
 }

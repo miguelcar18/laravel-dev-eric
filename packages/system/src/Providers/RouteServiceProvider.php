@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Packages\\System\\Http\\Controllers';
+    protected $namespace = 'Packages\System\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -52,8 +52,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::prefix(config('system.prefix_url', 'system'))
+            ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('web')
-        // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
             ->name('system::')
             ->namespace($this->namespace)
             ->group(__DIR__ . '/../Http/Routes/web.php');
@@ -62,8 +62,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix(config('system.prefix_url', 'system') . '/api')
+            ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('api')
-        // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
             ->name('system::api.')
             ->namespace("{$this->namespace}\Api")
             ->group(__DIR__ . '/../Http/Routes/api.php');

@@ -407,11 +407,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">Autores <span
+                <a class="nav-link" href="{{ route('news::author.index') }}">Autores <span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news_articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -420,7 +420,7 @@
 
     <div class="col-12 container ">
 
-        <a href="{{ route('authors.index') }}" class="btn btn-primary "> Autores </a>
+        <a href="{{ route('news::author.index') }}" class="btn btn-primary "> Autores </a>
         <br/>
 
         @if (isset($errors) && $errors->any())
@@ -439,7 +439,7 @@
         @endif
 
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form class="form-horizontal" method="POST" action="{{ route('authors.store') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('news::author.store') }}">
                 @csrf
 
                 <div class="form-row">
@@ -495,19 +495,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

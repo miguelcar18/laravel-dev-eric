@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Packages\\News\\Http\\Controllers';
+    protected $namespace = 'Packages\News\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -53,8 +53,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::prefix(config('news.prefix_url', 'news'))
+            ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('web')
-            // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
             ->name('news::')
             ->namespace($this->namespace)
             ->group(__DIR__ . '/../Http/Routes/web.php');
@@ -63,8 +63,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix(config('news.prefix_url', 'news') . '/api')
+            ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('api')
-            // ->domain(str_replace(['http://','https://'],'',env('APP_URL')))
             ->name('news::api.')
             ->namespace("{$this->namespace}\news")
             ->group(__DIR__ . '/../Http/Routes/api.php');

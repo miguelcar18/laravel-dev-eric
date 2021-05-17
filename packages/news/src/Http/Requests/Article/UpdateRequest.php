@@ -28,10 +28,10 @@ class UpdateRequest extends FormRequest
             'title' => 'required|unique:system_articles',
             'subtitle' => 'required',
             'section' => [
-                Rule::in(['deportes','economia','tecnoligia','entretenimiento',]),
+                Rule::in(['deportes', 'economia', 'tecnologia', 'entretenimiento']),
             ],
             'author_id' => 'required',
-            'body' => 'string'
+            'body' => 'string',
         ];
     }
 
@@ -43,7 +43,7 @@ class UpdateRequest extends FormRequest
             'subtitle.required' => 'El :attribute es obligatorio.',
             'section.in' => 'La :attribute seleccionada no es válida.',
             'author_id.required' => 'El :attribute es obligatorio',
-            'body.string' => 'El :attribute no puede estar vacio.'
+            'body.string' => 'El :attribute no puede estar vacio.',
         ];
     }
 
@@ -54,7 +54,7 @@ class UpdateRequest extends FormRequest
             'subtitle' => 'subtitulo',
             'section' => 'categoria',
             'author_id' => 'autor',
-            'body' => 'cuerpo'
+            'body' => 'cuerpo',
         ];
     }
 }

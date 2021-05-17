@@ -406,10 +406,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">User <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news::author.index') }}">User <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news_articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -417,7 +417,7 @@
 <div class="relative flex items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12 container">
-        <a href="{{ route('articles.index') }}" class="btn btn-primary "> Articulos </a>
+        <a href="{{ route('news::article.index') }}" class="btn btn-primary "> Articulos </a>
         <br/>
         <br/>
         @if (isset($errors) && $errors->any())
@@ -436,7 +436,7 @@
         @endif
 
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form class="form-horizontal" method="POST" action="{{ route('news_articles.update',$article->id) }}">
+            <form class="form-horizontal" method="POST" action="{{ route('news::article.update',$article->id) }}">
                 @method('PUT')
                 @csrf
 
@@ -457,11 +457,11 @@
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Categoria</label>
                         <select class="form-control" name="section" aria-label="Default select example">
-                            <option value="{{ $article->section }}">{{ $article->section }}</option>
-                            <option value="deportes">Deportes</option>
-                            <option value="economia">Economia</option>
-                            <option value="tecnologia">Tecnologia</option>
-                            <option value="entretenimiento">Entretenimiento</option>
+                            <option selected>Seleccione la categoria...</option>
+                            <option value="deportes" @if("deportes" == $article->section) selected @endif>Deportes</option>
+                            <option value="economia" @if("economia" == $article->section) selected @endif>Economia</option>
+                            <option value="tecnologia" @if("tecnologia" == $article->section) selected @endif>Tecnologia</option>
+                            <option value="entretenimiento" @if("entretenimiento" == $article->section) selected @endif>Entretenimiento</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
@@ -469,7 +469,7 @@
                         <select class="form-control" name="author_id" aria-label="Default select example">
                             <option selected>Seleccione el autor...</option>
                             @foreach($authors as $author)
-                                <option value="{{ $author->id }}"> {{ $author->name }} {{ $author->lastName }}</option>
+                                <option value="{{ $author->id }}" @if($author->id == $article->author_id) selected @endif> {{ $author->name }} {{ $author->lastName }}</option>
                             @endforeach
                         </select>
                     </div>

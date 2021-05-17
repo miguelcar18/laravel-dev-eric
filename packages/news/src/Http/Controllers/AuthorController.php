@@ -3,7 +3,6 @@
 namespace Packages\News\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Packages\News\Events\AuthorEvent;
 use Packages\News\Http\Requests\Author\StoreRequest;
 use Packages\News\Http\Requests\Author\UpdateRequest;
 use Packages\News\Models\Author;
@@ -20,9 +19,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::orderBy('created_at','DESC')->paginate(8);
+        $authors = Author::orderBy('created_at', 'DESC')->paginate(8);
 
-        return view('news::authors.index')->with('authors',$authors);
+        return view('news::authors.index')->with('authors', $authors);
     }
 
     /**
@@ -49,66 +48,60 @@ class AuthorController extends Controller
 //        event(new AuthorEvent($author));
         $this->mailNotify($author);
 
-        return redirect()->route('authors.index');
+        return redirect()->route('news::author.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Author $author
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Author $author)
     {
-        $author = Author::findOrFail($id);
-
-        return view('news::authors.show')->with('author',$author);
+        return view('news::authors.show', compact('author'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Author $author
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Author $author)
     {
-        $author = Author::findOrFail($id);
-//        dd($author);
-
-        return view('news::authors.edit')->with('author', $author);
+        return view('news::authors.edit', compact('author'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Author $author
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, $id)
+    public function update(UpdateRequest $request, Author $author)
     {
-        $author = Author::findOrFail($id);
-        $author->dni = $request->dni;
-        $author->email = $request->email;
-        $author->phone = $request->phone;
-        $author->name = $request->name;
-        $author->lastName = $request->lastName;
-        $author->update();
+        $author->update([
+            'dni' => $request->dni,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'name' => $request->name,
+            'lastName' => $request->lastName,
+        ]);
 
-        return redirect()->route('authors.index');
+        return redirect()->route('news::author.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Author $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Author $author)
     {
-        Author::destroy($id);
-
-        return redirect()->route('authors.index');
+        $author->delete();
+        return redirect()->route('news::author.index');
     }
 }

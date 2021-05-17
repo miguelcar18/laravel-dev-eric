@@ -3,7 +3,6 @@
 namespace Packages\News\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Packages\News\Mail\AuthorMail;
@@ -31,7 +30,7 @@ class AuthorNotify extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail','database'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -54,9 +53,9 @@ class AuthorNotify extends Notification
     public function toArray($notifiable)
     {
         return [
-            'link'  =>  route('news::authors.show',$this->author->id),
-            'title' =>  __('Perfil').' '.$this->author->name,
-            'text'  =>  __('Autor creado el '.$this->author->created_at)
+            'link' => route('news::author.show', $this->author->id),
+            'title' => __('Perfil') . ' ' . $this->author->name,
+            'text' => __('Autor creado el ' . $this->author->created_at),
         ];
     }
 }

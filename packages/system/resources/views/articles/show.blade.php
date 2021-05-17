@@ -406,10 +406,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('users.index') }}">User <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('system::users.index') }}">User <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('system::articles.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -417,12 +417,12 @@
 <div class="relative flex items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12 container">
-        <a href="{{ route('articles.index') }}" class="btn btn-primary "> Articulos </a>
+        <a href="{{ route('system::articles.index') }}" class="btn btn-primary "> Articulos </a>
         <br/>
         <br/>
 
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <form class="form-horizontal" method="POST" action="{{ route('articles.update',$article->id) }}">
+            <form class="form-horizontal" method="POST" action="{{ route('system::articles.update',$article->id) }}">
                 @method('PUT')
                 @csrf
 

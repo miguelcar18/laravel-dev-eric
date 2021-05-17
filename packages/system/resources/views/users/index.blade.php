@@ -406,10 +406,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('users.index') }}">User <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('system::users.index') }}">User <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('system::articles.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -419,7 +419,7 @@
 
     <div class="col-12">
 
-        <a href="{{ route('users.create') }}" class="btn btn-primary "> Usuario nuevo </a>
+        <a href="{{ route('system::users.create') }}" class="btn btn-primary "> Usuario nuevo </a>
         <br/>
         <br/>
         <table class="table table-hover table-dark">
@@ -438,14 +438,14 @@
                     <td class="text-center">{{$user->name}}</td>
                     <td class="text-center">{{$user->email}}</td>
                     <td class="text-center">
-                        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                        <form action="{{ route('system::users.destroy', $user->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">
+                            <a class="btn btn-primary" href="{{ route('system::users.edit',$user->id) }}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             &nbsp;
-                            <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">
+                            <a class="btn btn-info" href="{{ route('system::users.show',$user->id) }}">
                                 <i class="bi bi-person-badge"></i>
                             </a> &nbsp;
                             <a rel="tooltip" class="btn btn-danger"

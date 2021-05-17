@@ -21,15 +21,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
  */
 
-use Packages\System\Http\Controllers\SystemUserController;
-
 Route::group(['middleware' => ['web']], function () {
-    Route::prefix('system')->group(function () {
-        Route::resource('users', '\Packages\System\Http\Controllers\SystemUserController');
-        Route::resource('articles', '\Packages\System\Http\Controllers\SystemArticleController');
-        Route::get('/traits/mail', [SystemUserController::class,'mailTrait']);
-        Route::get('/', function () {
-            return view('test::index');
-        });
+    Route::resource('users', 'SystemUserController');
+    Route::resource('articles', 'SystemArticleController');
+    Route::get('/traits/mail', 'SystemUserController@mailTrait');
+    Route::get('/', function () {
+        return view('test::index');
     });
 });

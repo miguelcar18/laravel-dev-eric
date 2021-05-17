@@ -406,10 +406,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">Autores <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news::author.index') }}">Autores <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news_articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -419,7 +419,7 @@
 
     <div class="col-12">
 
-        <a href="{{ route('authors.create') }}" class="btn btn-primary "> Autor nuevo </a>
+        <a href="{{ route('news::author.create') }}" class="btn btn-primary "> Autor nuevo </a>
         <br/>
         <br/>
         <table class="table table-hover table-dark">
@@ -440,14 +440,14 @@
                     <td class="text-center">{{authortlf($author->id)}}</td>
                     <td class="text-center">{{$author->email}}</td>
                     <td class="text-center">
-                        <form action="{{ route('authors.destroy', $author->id) }}" method="post">
+                        <form action="{{ route('news::author.destroy', $author->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <a class="btn btn-primary" href="{{ route('authors.edit',$author->id) }}">
+                            <a class="btn btn-primary" href="{{ route('news::author.edit',$author->id) }}">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                             &nbsp;
-                            <a class="btn btn-info" href="{{ route('authors.show',$author->id) }}">
+                            <a class="btn btn-info" href="{{ route('news::author.show',$author->id) }}">
                                 <i class="bi bi-person-badge"></i>
                             </a> &nbsp;
                             <a rel="tooltip" class="btn btn-danger"

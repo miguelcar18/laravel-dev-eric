@@ -406,10 +406,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('users.index') }}">User <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('system::users.index') }}">User <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('system::articles.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -417,7 +417,7 @@
 <div class="relative flex items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12 container">
-        <a href="{{ route('users.index') }}" class="btn btn-primary "> Usuarios </a>
+        <a href="{{ route('system::users.index') }}" class="btn btn-primary "> Usuarios </a>
         <br/>
         <br/>
 

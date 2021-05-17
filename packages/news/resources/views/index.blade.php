@@ -413,10 +413,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">Autores <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news::author.index') }}">Autores <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
             <li class="nav-item dropdown pull-right">
                 <a class="nav-link dropdown-toggle" href="#" id="notificaciones" role="button" data-toggle="dropdown" >

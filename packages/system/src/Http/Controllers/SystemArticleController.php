@@ -2,12 +2,10 @@
 
 namespace Packages\System\Http\Controllers;
 
-use Packages\System\Events\ArticleEvent;
+use Illuminate\Http\Request;
 use Packages\System\Http\Requests\SystemArticle\StoreRequest;
 use Packages\System\Http\Requests\SystemArticle\UpdateRequest;
 use Packages\System\Models\SystemArticle;
-use Illuminate\Http\Request;
-use Packages\System\Models\SystemUser;
 use Packages\System\Traits\Agregar;
 
 class SystemArticleController extends Controller
@@ -21,9 +19,9 @@ class SystemArticleController extends Controller
      */
     public function index()
     {
-        $article = SystemArticle::orderBy('created_at','DESC')->paginate(10);
+        $article = SystemArticle::orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('test::articles.index')->with('articles',$article);
+        return view('test::articles.index')->with('articles', $article);
     }
 
     /**
@@ -55,8 +53,7 @@ class SystemArticleController extends Controller
 
         $article->save();
 
-
-        return redirect()->route('articles.index');
+        return redirect()->route('system::articles.index');
     }
 
     /**
@@ -69,7 +66,7 @@ class SystemArticleController extends Controller
     {
         $article = SystemArticle::findOrFail($id);
 
-        return view('test::articles.show')->with('article',$article);
+        return view('test::articles.show')->with('article', $article);
     }
 
     /**
@@ -82,7 +79,7 @@ class SystemArticleController extends Controller
     {
         $article = SystemArticle::findOrFail($id);
 //        dd($article);
-        return view('test::articles.edit')->with('article',$article);
+        return view('test::articles.edit')->with('article', $article);
     }
 
     /**
@@ -100,7 +97,7 @@ class SystemArticleController extends Controller
         $article->author = $request->author;
         $article->update();
 
-        return redirect()->route('articles.index');
+        return redirect()->route('system::articles.index');
     }
 
     /**
@@ -113,6 +110,6 @@ class SystemArticleController extends Controller
     {
         SystemArticle::destroy($id);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('system::articles.index');
     }
 }

@@ -12,7 +12,7 @@ if (!function_exists('authortlf')) {
     {
         $author = \Packages\News\Models\Author::find($id);
         if (!empty($author)) {
-            $tlf = "(".substr($author->phone,0,3).")"."".substr($author->phone,5,3)."-".substr($author->phone,6,4);
+            $tlf = "(" . substr($author->phone, 0, 3) . ")" . "" . substr($author->phone, 3, 3) . "-" . substr($author->phone, 6, 7);
             return $tlf;
         } else {
             return ('No posee un tlf');

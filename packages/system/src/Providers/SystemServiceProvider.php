@@ -2,21 +2,11 @@
 
 namespace Packages\System\Providers;
 
-use Packages\System\Console\Commands\SystemSeed;
 use Illuminate\Support\ServiceProvider;
+use Packages\System\Console\Commands\SystemSeed;
 
 class SystemServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__.'/../../config/system.php','system');
-    }
-
     /**
      * Bootstrap services.
      *
@@ -25,20 +15,23 @@ class SystemServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadResources();
-        $this->loadRoutesFrom(__DIR__.'/../Http/Routes/web.php');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang','es');
+        $this->registerCommands();
 
-        $this->publishes([
-            __DIR__.'/../../resources/lang' =>  resource_path('lang/vendor/es')
-        ]);
-
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'test');
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->publishResources();
             $this->registerCommands();
         }
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../../config/system.php', 'system');
     }
 
     /**
@@ -77,6 +70,11 @@ class SystemServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../resources/lang' => resource_path('lang/vendor/system'),
         ], 'system.lang');
+
+        // Publishing assets.
+        $this->publishes([
+            __DIR__ . '/../../resources/assets' => public_path('vendor/system'),
+        ], 'system.assets');
 
     }
 

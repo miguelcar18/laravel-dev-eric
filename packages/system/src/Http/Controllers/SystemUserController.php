@@ -3,9 +3,6 @@
 namespace Packages\System\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Packages\System\Events\NewUserEvent;
-use Packages\System\Events\PrimerEvento;
-use Packages\System\Events\RegisterEvent;
 use Packages\System\Http\Requests\SystemUser\StoreRequest;
 use Packages\System\Http\Requests\SystemUser\UpdateRequest;
 use Packages\System\Models\SystemUser;
@@ -24,7 +21,7 @@ class SystemUserController extends Controller
         $user = SystemUser::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('test::users.index')->with([
-            'users' =>  $user,
+            'users' => $user,
         ]);
     }
 
@@ -60,10 +57,10 @@ class SystemUserController extends Controller
 
         $this->mailTrait($user);
 //        event(new RegisterEvent($user));
-//        event(new PrimerEvento($user));
-//        event(new NewUserEvent($user));
+        //        event(new PrimerEvento($user));
+        //        event(new NewUserEvent($user));
 
-        return redirect()->route('users.index');
+        return redirect()->route('system::users.index');
     }
 
     /**
@@ -107,7 +104,7 @@ class SystemUserController extends Controller
         $user->password = $request->password;
         $user->update();
 
-        return redirect()->route('users.index');
+        return redirect()->route('system::users.index');
     }
 
     /**
@@ -120,6 +117,6 @@ class SystemUserController extends Controller
     {
         SystemUser::destroy($id);
 
-        return redirect()->route('users.index');
+        return redirect()->route('system::users.index');
     }
 }

@@ -407,10 +407,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('authors.index') }}">User <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('news::author.index') }}">User <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('news_articles.index') }}">Articulos</a>
+                <a class="nav-link" href="{{ route('news::article.index') }}">Articulos</a>
             </li>
         </ul>
     </div>
@@ -418,7 +418,7 @@
 <div class="relative flex items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
     <div class="col-12 container">
-        <a href="{{ route('news_articles.index') }}" class="btn btn-primary "> Articulos </a>
+        <a href="{{ route('news::article.index') }}" class="btn btn-primary "> Articulos </a>
         <br/>
         @if (isset($errors) && $errors->any())
             <div class="row row justify-content-center align-items-center minh-100">
@@ -436,7 +436,7 @@
         @endif
         <div class=" col-8 items-top min-h-screen bg-gray-100 container dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
-            <form class="form-horizontal" method="POST" action="{{ route('news_articles.store') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('news::article.store') }}">
                 @csrf
 
                 <div class="form-row">

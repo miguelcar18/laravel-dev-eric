@@ -25,41 +25,41 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'  =>  'required|unique:system_articles',
-            'subtitle'  =>  'required',
-            'section' =>  [
+            'title' => 'required|unique:system_articles',
+            'subtitle' => 'required',
+            'section' => [
                 Rule::in([
                     'deportes',
                     'economia',
-                    'tecnoligia',
+                    'tecnologia',
                     'entretenimiento',
                 ]),
             ],
-            'author_id' =>  'required',
-            'body'  =>  'string'
+            'author_id' => 'required',
+            'body' => 'string',
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required' =>  'El :attribute es obligatorio.',
-            'title.unique' =>  'El :attribute ya ha sido tomado.',
-            'subtitle.required' =>  'El :attribute es obligatorio.',
-            'section.in' =>  'La :attribute seleccionada no es válida.',
-            'author_id.required'    =>  'El :attribute es obligatorio',
-            'body.string' =>  'El :attribute no puede estar vacio.'
+            'title.required' => 'El :attribute es obligatorio.',
+            'title.unique' => 'El :attribute ya ha sido tomado.',
+            'subtitle.required' => 'El :attribute es obligatorio.',
+            'section.in' => 'La :attribute seleccionada no es válida.',
+            'author_id.required' => 'El :attribute es obligatorio',
+            'body.string' => 'El :attribute no puede estar vacio.',
         ];
     }
 
     public function attributes()
     {
         return [
-            'title'  =>  'titulo',
-            'subtitle'  =>  'subtitulo',
-            'section'  =>  'categoria',
-            'author_id' =>  'autor',
-            'body'  =>  'cuerpo'
+            'title' => 'titulo',
+            'subtitle' => 'subtitulo',
+            'section' => 'categoria',
+            'author_id' => 'autor',
+            'body' => 'cuerpo',
         ];
     }
 }
