@@ -2,7 +2,6 @@
 
 namespace Packages\News\Providers;
 
-
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Packages\News\Events\ArticleEvent;
 use Packages\News\Events\AuthorEvent;

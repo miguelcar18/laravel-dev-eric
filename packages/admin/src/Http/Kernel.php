@@ -1,6 +1,6 @@
 <?php
 
-namespace Packages\News\Http;
+namespace Packages\Admin\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 

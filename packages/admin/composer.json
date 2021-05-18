@@ -1,0 +1,46 @@
+{
+    "name": "packages/admin",
+    "description": "administracion",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric",
+            "email": "ericdrz19@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": ["laravel","admin","packages"],
+    "require": {
+        "ramsey/uuid-doctrine": "^1.6"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Packages\\Admin\\": "src/",
+            "Packages\\Admin\\Console\\Commands\\": "src/Commands/",
+            "Packages\\Admin\\Database\\Seeds\\": "src/database/seeds/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Packages\\Admin\\": "src/",
+            "Packages\\Admin\\Console\\Commands\\": "src/Commands/",
+            "Packages\\Admin\\Database\\Seeds\\": "src/database/seeds/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Packages\\Admin\\Providers\\AdminServiceProvider",
+                "Packages\\Admin\\Providers\\EventServiceProvider",
+                "Packages\\Admin\\Providers\\FacadesServiceProvider",
+                "Packages\\Admin\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+                "PackagesSystemSettings": "Packages\\Admin\\Facades\\AdminSettings"
+            }
+        }
+    }
+}
