@@ -17,11 +17,7 @@
 //use Packages\News\Http\Controllers\AuthorController;
 
 Route::group(['middleware' => ['web']], function () {
-    Route::resource('author', 'AuthorController');
-//        Route::resource('news_articles', ArticleController::class);
-    Route::resource('article', 'ArticleController');
-//        Route::get('/traits/mail', [AuthorController::class,'mailNotify']);
     Route::get('/', function () {
-        return view('news::index');
+        return 'Admin';
     });
 });
