@@ -11,11 +11,18 @@
     "minimum-stability": "stable",
     "keywords": ["laravel","admin","packages"],
     "require": {
+        "jenssegers/agent": "^2.6",
+        "jenssegers/date": "^4.0",
+        "jenssegers/model": "^1.2",
+        "laravelcollective/html": "^6.0",
+        "pragmarx/coollection": "^0.7.1",
+        "pragmarx/countries-laravel": "^0.6.3",
         "ramsey/uuid-doctrine": "^1.6"
     },
     "autoload": {
         "files": [
-            "src/Helpers/helpers.php"
+            "src/Helpers/helpers.php",
+            "src/Helpers/interface.php"
         ],
         "psr-4": {
             "Packages\\Admin\\": "src/",
@@ -39,6 +46,7 @@
                 "Packages\\Admin\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
+                "Menu": "Packages\\Admin\\Facades\\Menu",
                 "PackagesSystemSettings": "Packages\\Admin\\Facades\\AdminSettings"
             }
         }

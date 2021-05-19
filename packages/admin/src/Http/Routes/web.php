@@ -13,11 +13,8 @@
 |
  */
 
-//use Packages\News\Http\Controllers\ArticleController;
-//use Packages\News\Http\Controllers\AuthorController;
-
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', function () {
-        return 'Admin';
-    });
+
+    Route::get('/', 'HomeController@index')->name('home');
+
 });

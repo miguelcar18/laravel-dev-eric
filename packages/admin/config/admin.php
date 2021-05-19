@@ -2,5 +2,11 @@
 
 return [
     'prefix_url' => 'admin',
-    'menu' => [],
+    'menu' => [
+        [
+            'text' => 'admin::pages/sections/left-bar.home',
+            'route' => 'admin::home',
+            'icon' => 'home',
+        ],
+    ],
 ];
