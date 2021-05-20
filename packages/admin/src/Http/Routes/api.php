@@ -11,7 +11,10 @@
 |
  */
 
-Route::group(['middleware' => ['auth.jwt', 'verified', 'can_use_route']], function () {
+Route::group(['middleware' => ['web']], function () {
+
+    Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);
+    });
 
 });
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace Packages\Admin\Http\Requests;
+namespace Databyte\SalesUi\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class BaseRequest extends FormRequest
      */
     public function messages()
     {
-        return array_merge(trans('admin::validation'), trans('admin::validation.custom'));
+        return array_merge(trans('sales-ui::validation'), trans('sales-ui::validation.custom'));
     }
 
     /**
@@ -23,6 +23,6 @@ class BaseRequest extends FormRequest
      */
     public function attributes()
     {
-        return trans('admin::validation.attributes');
+        return trans('sales-ui::validation.attributes');
     }
 }

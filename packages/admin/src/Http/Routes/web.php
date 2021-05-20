@@ -17,4 +17,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 
+    Route::resources([
+        'customer' => 'CustomerController',
+    ]);
+
 });

@@ -11,13 +11,16 @@
     "minimum-stability": "stable",
     "keywords": ["laravel","admin","packages"],
     "require": {
+        "ellipsesynergie/api-response": "^0.16.0",
         "jenssegers/agent": "^2.6",
         "jenssegers/date": "^4.0",
         "jenssegers/model": "^1.2",
         "laravelcollective/html": "^6.0",
+        "league/fractal": "^0.18.0",
         "pragmarx/coollection": "^0.7.1",
         "pragmarx/countries-laravel": "^0.6.3",
-        "ramsey/uuid-doctrine": "^1.6"
+        "ramsey/uuid-doctrine": "^1.6",
+        "webpatser/laravel-uuid": "^3.0"
     },
     "autoload": {
         "files": [
@@ -41,9 +44,12 @@
         "laravel": {
             "providers": [
                 "Packages\\Admin\\Providers\\AdminServiceProvider",
+                "Packages\\Admin\\Providers\\CustomerServiceProvider",
                 "Packages\\Admin\\Providers\\EventServiceProvider",
                 "Packages\\Admin\\Providers\\FacadesServiceProvider",
-                "Packages\\Admin\\Providers\\RouteServiceProvider"
+                "Packages\\Admin\\Providers\\RouteServiceProvider",
+
+                "EllipseSynergie\\ApiResponse\\Laravel\\ResponseServiceProvider"
             ],
             "aliases": {
                 "Menu": "Packages\\Admin\\Facades\\Menu",

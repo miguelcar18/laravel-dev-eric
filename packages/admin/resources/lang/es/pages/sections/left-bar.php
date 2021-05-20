@@ -12,4 +12,5 @@ return [
     |
      */
     'home' => 'Inicio',
+    'customer' => 'Clientes',
 ];

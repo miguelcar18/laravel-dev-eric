@@ -51,7 +51,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::prefix(config('admin.prefix_url','admin'))
+        Route::prefix(config('admin.prefix_url', 'admin'))
             ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('web')
             ->name('admin::')
@@ -61,11 +61,11 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapApiRoutes()
     {
-        Route::prefix(config('admin.prefix_url', 'admin').'/api')
+        Route::prefix(config('admin.prefix_url', 'admin') . '/api')
             ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('api')
             ->name('admin::api.')
-            ->namespace("{$this->namespace}\admin")
+            ->namespace("{$this->namespace}\Api")
             ->group(__DIR__ . '/../Http/Routes/api.php');
     }
 }

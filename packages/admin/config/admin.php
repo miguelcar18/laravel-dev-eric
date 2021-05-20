@@ -8,5 +8,10 @@ return [
             'route' => 'admin::home',
             'icon' => 'home',
         ],
+        [
+            'text' => 'admin::pages/sections/left-bar.customer',
+            'route' => 'admin::customer.index',
+            'icon' => 'plus-square',
+        ],
     ],
 ];

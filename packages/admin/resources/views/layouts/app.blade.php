@@ -12,7 +12,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <!-- container-fluid -->
-                @include('admin::partials.page.breadcrumbs')
+                @yield('breadcrumbs')
 
                 <div class="container-fluid">
                     <div class="row mb-2">
