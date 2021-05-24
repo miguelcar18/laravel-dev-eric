@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Nynorsk [nn]
-//! authors : https://github.com/mechuwind
+//! editors : https://github.com/mechuwind
 //!           Stephen Ramthun : https://github.com/stephenramthun
 
 ;(function (global, factory) {

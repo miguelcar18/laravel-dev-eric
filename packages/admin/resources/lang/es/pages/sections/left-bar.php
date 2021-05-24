@@ -13,4 +13,6 @@ return [
      */
     'home' => 'Inicio',
     'customer' => 'Clientes',
+    'author' => 'Autores',
+    'article' => 'Articulos',
 ];

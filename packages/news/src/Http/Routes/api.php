@@ -11,7 +11,14 @@
 |
  */
 
-Route::group(['middleware' => ['auth.jwt', 'verified', 'can_use_route']], function () {
+//Route::group(['middleware' => ['auth.jwt', 'verified', 'can_use_route']], function () {
+//
+//});
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::group(['prefix' => 'author', 'as' => 'author.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'AuthorController@index']);
+    });
 
 });
-

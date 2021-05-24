@@ -66,7 +66,7 @@ class RouteServiceProvider extends ServiceProvider
             ->domain(\App::environment('local') ? '' : config('app.url'))
             ->middleware('api')
             ->name('news::api.')
-            ->namespace("{$this->namespace}\news")
+            ->namespace("{$this->namespace}\Api")
             ->group(__DIR__ . '/../Http/Routes/api.php');
     }
 }

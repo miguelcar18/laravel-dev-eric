@@ -2,7 +2,7 @@
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
 /**
- * Author: Koh Zi Han, based on implementation by Koh Zi Chun
+ * Editor: Koh Zi Han, based on implementation by Koh Zi Chun
  */
 
 (function(mod) {

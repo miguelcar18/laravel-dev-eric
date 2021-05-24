@@ -4,7 +4,7 @@
 /***
     |''Name''|tiddlywiki.js|
     |''Description''|Enables TiddlyWikiy syntax highlighting using CodeMirror|
-    |''Author''|PMario|
+    |''Editor''|PMario|
     |''Version''|0.1.7|
     |''Status''|''stable''|
     |''Source''|[[GitHub|https://github.com/pmario/CodeMirror2/blob/tw-syntax/mode/tiddlywiki]]|

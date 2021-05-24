@@ -11,7 +11,7 @@
  *        Created:  05/17/2012 09:20:25 PM
  *       Revision:  08/05/2019 AstLinux Project: Support block-comments
  *
- *         Author:  Stas Kobzar (stas@modulis.ca),
+ *         Editor:  Stas Kobzar (stas@modulis.ca),
  *        Company:  Modulis.ca Inc.
  *
  * =====================================================================================

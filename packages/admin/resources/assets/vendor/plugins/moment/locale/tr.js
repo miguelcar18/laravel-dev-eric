@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Turkish [tr]
-//! authors : Erhan Gundogan : https://github.com/erhangundogan,
+//! editors : Erhan Gundogan : https://github.com/erhangundogan,
 //!           Burak Yiğit Kaya: https://github.com/BYK
 
 ;(function (global, factory) {

@@ -2,7 +2,7 @@
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
 /**
- * Author: Gautam Mehta
+ * Editor: Gautam Mehta
  * Branched from CodeMirror's Scheme mode
  */
 (function(mod) {

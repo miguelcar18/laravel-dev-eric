@@ -18,9 +18,9 @@
 @endsection
 
 @section('page-content')
-    <div class="card">
+    <div class="card ">
         {{--@jwt_field--}}
-        <div class="card-body">
+        <div class="card-body ">
             <div class="row">
                 <div class="table-responsive">
                     <table id="server-side-data-table" class="table table-bordered table-hover table-striped table-light-dark">

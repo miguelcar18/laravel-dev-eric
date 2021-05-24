@@ -16,5 +16,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);
     });
+    Route::group(['prefix' => 'author', 'as' => 'author.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'AuthorController@index']);
+    });
 
 });

@@ -2,7 +2,7 @@
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
 /*
- * Author: Constantin Jucovschi (c.jucovschi@jacobs-university.de)
+ * Editor: Constantin Jucovschi (c.jucovschi@jacobs-university.de)
  * Licence: MIT
  */
 

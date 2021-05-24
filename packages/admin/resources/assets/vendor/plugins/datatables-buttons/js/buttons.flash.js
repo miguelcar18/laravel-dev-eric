@@ -46,7 +46,7 @@ var DataTable = $.fn.dataTable;
 
 /*
  * ZeroClipboard 1.0.4 with modifications
- * Author: Joseph Huckaby
+ * Editor: Joseph Huckaby
  * License: MIT
  *
  * Copyright (c) 2012 Joseph Huckaby
@@ -1398,7 +1398,7 @@ DataTable.ext.buttons.excelFlash = $.extend( {}, flashButton, {
 	},
 
 	extension: '.xlsx',
-	
+
 	createEmptyCells: false
 } );
 

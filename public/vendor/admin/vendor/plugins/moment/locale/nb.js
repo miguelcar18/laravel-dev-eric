@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Norwegian Bokmål [nb]
-//! authors : Espen Hovlandsdal : https://github.com/rexxars
+//! editors : Espen Hovlandsdal : https://github.com/rexxars
 //!           Sigurd Gartmann : https://github.com/sigurdga
 //!           Stephen Ramthun : https://github.com/stephenramthun
 

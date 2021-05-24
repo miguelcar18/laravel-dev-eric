@@ -13,5 +13,15 @@ return [
             'route' => 'admin::customer.index',
             'icon' => 'plus-square',
         ],
+        [
+            'text' => 'admin::pages/sections/left-bar.author',
+            'route' => 'news::author.index',
+            'icon' => 'plus-square',
+        ],
+//        [
+//            'text' => 'admin::pages/sections/left-bar.post',
+//            'route' => 'news::post.index',
+//            'icon' => 'plus-square',
+//        ],
     ],
 ];

@@ -59,7 +59,7 @@ class NewsServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes([
             __DIR__ . '/../../config/news.php' => config_path('news.php'),
-        ], 'news.config');
+        ], 'news.views');
 
         // Publishing the views.
         $this->publishes([

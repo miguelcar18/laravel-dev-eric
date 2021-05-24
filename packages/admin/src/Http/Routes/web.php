@@ -21,4 +21,12 @@ Route::group(['middleware' => ['web']], function () {
         'customer' => 'CustomerController',
     ]);
 
+    Route::resources([
+        'author' => 'AuthorController',
+    ]);
+
+    Route::resources([
+        'post' => 'PostController',
+    ]);
+
 });

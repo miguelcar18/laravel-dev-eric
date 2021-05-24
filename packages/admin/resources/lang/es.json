@@ -1,5 +1,11 @@
 {
     "Customer created": "¡El cliente ha sido creado!",
     "Customer deleted": "¡El cliente ha sido eliminado!",
-    "Customer updated": "¡El cliente ha sido actualizado!"
+    "Customer updated": "¡El cliente ha sido actualizado!",
+    "Author created": "¡El autor ha sido creado!",
+    "Author deleted": "¡El autor ha sido eliminado!",
+    "Author updated": "¡El autor ha sido actualziado!",
+    "Post created": "¡El publicacion ha sido creada!",
+    "Post deleted": "¡El publicacion ha sido eliminada!",
+    "Post updated": "¡El publicacion ha sido actualizada!"
 }

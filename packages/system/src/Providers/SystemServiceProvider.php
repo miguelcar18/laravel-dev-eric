@@ -59,7 +59,7 @@ class SystemServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes([
             __DIR__ . '/../../config/system.php' => config_path('system.php'),
-        ], 'system.config');
+        ], 'system.views');
 
         // Publishing the views.
         $this->publishes([
@@ -83,5 +83,7 @@ class SystemServiceProvider extends ServiceProvider
         $this->commands([
             SystemSeed::class,
         ]);
+
+        return $this;
     }
 }

@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Northern Sami [se]
-//! authors : Bård Rolstad Henriksen : https://github.com/karamell
+//! editors : Bård Rolstad Henriksen : https://github.com/karamell
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'
