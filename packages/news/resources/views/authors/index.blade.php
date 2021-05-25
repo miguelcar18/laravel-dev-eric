@@ -1,19 +1,19 @@
 @extends('admin::layouts.app')
 
 @section('page-title')
-    {{ trans('admin::pages/author.index.page_title') }}
+    {{ trans('news::pages/author.index.page_title') }}
 @endsection
 
 @section('page-description')
 @endsection
 
 @section('page-header')
-    {{ trans('admin::pages/author.index.page_header') }}
+    {{ trans('news::pages/author.index.page_header') }}
 @endsection
 
 @section('breadcrumbs')
     @include('admin::partials.page.breadcrumbs', [ 'breadcrumbs' => [
-    ['text' => trans('admin::pages/author.index.breadcrumb')]
+    ['text' => trans('news::pages/author.index.breadcrumb')]
 ]])
 @endsection
 
@@ -28,10 +28,10 @@
                     <table id="server-side-data-table" class="table table-bordered table-hover table-striped table-light-dark">
                         <thead class="thead-default">
                         <tr>
-                            <th>{{ trans('admin::pages/customer.index.columns.name') }}</th>
-                            <th>{{ trans('admin::pages/customer.index.columns.email') }}</th>
-                            <th>{{ trans('admin::pages/customer.index.columns.phone') }}</th>
-                            <th>{{ trans('admin::pages/customer.index.columns.actions') }}</th>
+                            <th>{{ trans('news::pages/author.index.columns.name') }}</th>
+                            <th>{{ trans('news::pages/author.index.columns.email') }}</th>
+                            <th>{{ trans('news::pages/author.index.columns.phone') }}</th>
+                            <th>{{ trans('news::pages/author.index.columns.actions') }}</th>
                         </tr>
                         </thead>
                     </table>
@@ -50,20 +50,20 @@
             if (data.can_edit) {
                 html+='<button onclick="location.href=\'' + data.edit_route + '\'"';
                 html+='class="btn btn-outline-warning btn--icon"';
-                html+='title="{{ trans('admin::pages/author.index.edit') }}"';
+                html+='title="{{ trans('news::pages/author.index.edit') }}"';
                 html+='><i class="fa fa-edit"></i></button>';
             }
 
             if (data.can_delete) {
                 html+='<button class="btn btn-outline-danger btn--icon"';
-                html+='title="{{ trans('admin::pages/author.index.destroy.tooltip') }}"';
+                html+='title="{{ trans('news::pages/author.index.destroy.tooltip') }}"';
                 html+='data-trigger="sweet-alert"';
-                html+='data-sweet-alert-title="{{ trans('admin::pages/author.index.destroy.alert.title') }}"';
-                html+='data-sweet-alert-text="{{ trans('admin::pages/author.index.destroy.alert.text') }}"';
+                html+='data-sweet-alert-title="{{ trans('news::pages/author.index.destroy.alert.title') }}"';
+                html+='data-sweet-alert-text="{{ trans('news::pages/author.index.destroy.alert.text') }}"';
                 html+='data-sweet-alert-type="error"';
-                html+='data-sweet-alert-confirm-text="{{ trans('admin::pages/author.index.destroy.alert.confirm') }}"';
+                html+='data-sweet-alert-confirm-text="{{ trans('news::pages/author.index.destroy.alert.confirm') }}"';
                 html+='data-sweet-alert-confirm-action="document.getElementById(\'delete-' + data.id + '\').submit()"';
-                html+='data-sweet-alert-cancel-text="{{ trans('admin::pages/author.index.destroy.alert.cancel') }}"';
+                html+='data-sweet-alert-cancel-text="{{ trans('news::pages/author.index.destroy.alert.cancel') }}"';
                 html+='><i class="fa fa-delete"></i></button>';
                 html+='<form action="' + data.delete_route + '" id="delete-' + data.id + '" style="display: none;" method="POST">{{ method_field('DELETE') }}{{ csrf_field() }}</form>';
             }
@@ -89,7 +89,7 @@
                 lengthMenu: datatables_language.length_menu,
                 dom: datatables_language.dom,
                 ajax: {
-                    url: "{{ route('news::api.author.index') }}",
+                    url: "{{ route('news::Api.author.index') }}",
                     data: function (d) {
                         d.token = $('input[name=token]').val();
                         d.status = $('input[name=status]:checked').val() || 'active';
@@ -118,7 +118,7 @@
                 columns: [
                     { data: 'name', name: 'name', render: function(data, type, row, meta) {
                             if(row.can_edit) {
-                                return '<a href="'+row.edit_route+'" title="{{ trans('admin::pages/author.index.edit') }}">' + data + '</a>';
+                                return '<a href="'+row.edit_route+'" title="{{ trans('news::pages/author.index.edit') }}">' + data + '</a>';
                             }
                             return data;
                         } },
@@ -146,7 +146,7 @@
 
                     let create_button = {
                         url: "{{ route('news::author.create') }}",
-                        title: "{{ trans('admin::pages/author.create.page_title') }}"
+                        title: "{{ trans('news::pages/author.create.page_title') }}"
                     };
 
                     datatableSearch(table);

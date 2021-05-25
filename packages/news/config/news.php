@@ -2,5 +2,11 @@
 
 return [
     'prefix_url' => 'news',
-    'menu' => [],
+    'menu' => [
+        [
+            'text' => 'admin::pages/sections/left-bar.author',
+            'route' => 'news::author.index',
+            'icon' => 'plus-square',
+        ],
+    ],
 ];

@@ -20,7 +20,9 @@ class CreateAuthorsTable extends Migration
             $table->string('lastName')->nullable();
             $table->string('dni')->nullable();
             $table->string('phone')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

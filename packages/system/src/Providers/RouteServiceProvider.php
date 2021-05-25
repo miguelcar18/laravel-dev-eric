@@ -61,10 +61,10 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapApiRoutes()
     {
-        Route::prefix(config('system.prefix_url', 'system') . '/api')
+        Route::prefix(config('system.prefix_url', 'system') . '/Api')
             ->domain(\App::environment('local') ? '' : config('app.url'))
-            ->middleware('api')
-            ->name('system::api.')
+            ->middleware('Api')
+            ->name('system::Api.')
             ->namespace("{$this->namespace}\Api")
             ->group(__DIR__ . '/../Http/Routes/api.php');
     }

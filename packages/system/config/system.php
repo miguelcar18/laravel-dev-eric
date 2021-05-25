@@ -3,8 +3,8 @@
 return [
     'prefix_url'    =>  'system',
     'menu'  =>  [
-        //      'text' => 'chilexpress-api::pages/sections/left-bar.categories.index',
-        //     'route' => 'chilexpress-api::category.index',
+        //      'text' => 'chilexpress-Api::pages/sections/left-bar.categories.index',
+        //     'route' => 'chilexpress-Api::category.index',
         //     'icon' => 'collection-text',
     ],
 ];

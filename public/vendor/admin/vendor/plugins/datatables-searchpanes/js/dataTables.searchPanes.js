@@ -2023,7 +2023,7 @@
          * Declares the instances of individual searchpanes dependant on the number of columns.
          * It is necessary to run this once preInit has completed otherwise no panes will be
          *  created as the column count will be 0.
-         * @param table the DataTable api for the parent table
+         * @param table the DataTable Api for the parent table
          * @param paneSettings the settings passed into the constructor
          * @param opts the options passed into the constructor
          */

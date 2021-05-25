@@ -1,6 +1,6 @@
 <?php
 
-namespace Packages\Admin\Transformers\Datatables;
+namespace Packages\News\Transformers\Datatables;
 
 use League\Fractal;
 use Packages\News\Models\Author;
@@ -24,7 +24,7 @@ class AuthorTransformer extends Fractal\TransformerAbstract
             'delete_route' => route('news::author.destroy', $author),
             'edit_route' => route('news::author.edit', $author),
             'email' => $author->email,
-            'mobile' => $author->mobile,
+            'mobile' => $author->phone,
             'name' => $author->name,
             'status' => empty($author->deleted_at) ? __('Active') : __('Removed'),
         ];

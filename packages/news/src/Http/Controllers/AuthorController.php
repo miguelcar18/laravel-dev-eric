@@ -2,6 +2,7 @@
 
 namespace Packages\News\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use Packages\News\Http\Requests\Author\StoreRequest;
 use Packages\News\Http\Requests\Author\UpdateRequest;
@@ -19,9 +20,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::orderBy('created_at', 'DESC')->paginate(8);
+//        $authors = Author::orderBy('created_at', 'DESC')->paginate(8);
 
-        return view('news::authors.index')->with('authors', $authors);
+        return view('news::authors.index');
     }
 
     /**

@@ -1,16 +1,15 @@
 <?php
 
-namespace Packages\Admin\Http\Controllers\Api;
+namespace Packages\News\Http\Controllers\Api;
 
 use EllipseSynergie\ApiResponse\Contracts\Response as ApiResponse;
 use Illuminate\Http\Request;
-use Packages\Admin\Repositories\Datatables\AuthorRepository;
-use Packages\Admin\Transformers\Datatables\AuthorTransformer;
-
+use Packages\News\Http\Controllers\Api\Controller;
+use Packages\News\Repositories\Datatables\AuthorRepository;
+use Packages\News\Transformers\Datatables\AuthorTransformer;
 
 class AuthorController extends Controller
 {
-
     protected $author;
 
     public function __construct(ApiResponse $response,  AuthorRepository $author)

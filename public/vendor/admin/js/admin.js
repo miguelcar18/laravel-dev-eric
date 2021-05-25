@@ -64,7 +64,7 @@ $(document).ready(function () {
                 console.log('The next NAME\'s input attribute already exists', input);
                 return;
             }
-            
+
             var classes = jinput.attr('class');
             var styles = jinput.attr('style');
             var placeholder = jinput.attr('placeholder');
@@ -131,7 +131,7 @@ $(document).ready(function () {
         $('select[name=currency], select[name=currency_type], select[name=currency_id]').on('change', function(e) {
             let currency = $(this).val();
             if (!currency) return;
-            $.getJSON('/admin/api/currency/A_FAKE_ID_TO_REPLACE'.replace('A_FAKE_ID_TO_REPLACE', currency), {
+            $.getJSON('/admin/Api/currency/A_FAKE_ID_TO_REPLACE'.replace('A_FAKE_ID_TO_REPLACE', currency), {
                 token: $('input[name=token]').val()
             }, function(json, textStatus) {
                     $('input[data-databyte-format-currency]')
@@ -146,7 +146,7 @@ $(document).ready(function () {
             });
         });
     }
-            
+
     /*------------------------------------------------
         Theme Switch
     -------------------------------------------------*/
@@ -270,7 +270,7 @@ function datatableFilters(create_button = false, array_radios = false, more_filt
         newRecordButton += '<div class="dataTables_buttons hidden-sm-down actions dataTables_new_record_button">';
         newRecordButton += '<a href="'+url+'" class="btn btn-success btn--icon-text custom-shadow" title="'+title+'"><i class="fa fa-plus-circle"></i></a>';
         newRecordButton += '</div>';
-        
+
         $("div#new-record-button").append(newRecordButton);
     }
 
@@ -287,7 +287,7 @@ function datatableFilters(create_button = false, array_radios = false, more_filt
         });
 
         newRecordButton += '</div>';
-        
+
         $("div#new-record-button").append(newRecordButton);
     }
 

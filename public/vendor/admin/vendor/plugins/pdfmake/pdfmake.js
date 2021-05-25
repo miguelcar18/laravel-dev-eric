@@ -4574,7 +4574,7 @@ module.exports = function (O, defaultConstructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* eslint-disable node/no-deprecated-api */
+/* WEBPACK VAR INJECTION */(function(process) {/* eslint-disable node/no-deprecated-Api */
 
 
 
@@ -8276,7 +8276,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* eslint-disable node/no-deprecated-api */
+/* eslint-disable node/no-deprecated-Api */
 var buffer = __webpack_require__(10)
 var Buffer = buffer.Buffer
 
@@ -22916,7 +22916,7 @@ PdfPrinter.prototype.createPdfKitDocument = function (docDefinition, options) {
 function setMetadata(docDefinition, pdfKitDoc) {
 	// PDF standard has these properties reserved: Title, Editor, Subject, Keywords,
 	// Creator, Producer, CreationDate, ModDate, Trapped.
-	// To keep the pdfmake api consistent, the info field are defined lowercase.
+	// To keep the pdfmake Api consistent, the info field are defined lowercase.
 	// Custom properties don't contain a space.
 	function standardizePropertyKey(key) {
 		var standardProperties = ['Title', 'Editor', 'Subject', 'Keywords',
@@ -30856,7 +30856,7 @@ module.exports = deprecate;
  * @param {Function} fn - the function to deprecate
  * @param {String} msg - the string to print to the console when `fn` is invoked
  * @returns {Function} a new "deprecated" version of `fn`
- * @api public
+ * @Api public
  */
 
 function deprecate (fn, msg) {
@@ -30887,7 +30887,7 @@ function deprecate (fn, msg) {
  *
  * @param {String} name
  * @returns {Boolean}
- * @api private
+ * @Api private
  */
 
 function config (name) {

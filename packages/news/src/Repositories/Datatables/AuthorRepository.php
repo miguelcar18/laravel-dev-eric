@@ -1,9 +1,9 @@
 <?php
 
-namespace Packages\Admin\Repositories\Datatables;
+namespace Packages\News\Repositories\Datatables;
 
 use Packages\News\Models\Author;
-use Packages\Admin\Repositories\AbstractRepository;
+use Packages\News\Repositories\AbstractRepository;
 use Packages\Admin\Traits\WorksWithDatatables;
 
 class AuthorRepository extends AbstractRepository

@@ -4,11 +4,14 @@ namespace Packages\News\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
 class Author extends BaseModel
 {
-    use HasFactory, Notifiable;
+    use Notifiable, SoftDeletes;
+
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
         'id',

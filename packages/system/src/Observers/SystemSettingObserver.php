@@ -14,7 +14,7 @@ class SystemSettingObserver
     }
 
     /**
-     * Handle the chilexpress api setting "created" event.
+     * Handle the chilexpress Api setting "created" event.
      *
      * @param  \Packages\System\Models\SystemSetting  $systemSetting
      * @return void
@@ -30,7 +30,7 @@ class SystemSettingObserver
     }
 
     /**
-     * Handle the chilexpress api setting "updated" event.
+     * Handle the chilexpress Api setting "updated" event.
      *
      * @param  \Packages\System\Models\SystemSetting  $systemSetting
      * @return void
@@ -56,7 +56,7 @@ class SystemSettingObserver
     }
 
     /**
-     * Handle the chilexpress api setting "deleted" event.
+     * Handle the chilexpress Api setting "deleted" event.
      *
      * @param  \Packages\System\Models\SystemSetting  $systemSetting
      * @return void
@@ -72,7 +72,7 @@ class SystemSettingObserver
     }
 
     /**
-     * Handle the chilexpress api setting "restored" event.
+     * Handle the chilexpress Api setting "restored" event.
      *
      * @param  \Packages\System\Models\SystemSetting  $systemSetting
      * @return void
@@ -83,7 +83,7 @@ class SystemSettingObserver
     }
 
     /**
-     * Handle the chilexpress api setting "force deleted" event.
+     * Handle the chilexpress Api setting "force deleted" event.
      *
      * @param  \Packages\System\Models\SystemSetting  $systemSetting
      * @return void

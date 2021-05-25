@@ -66,7 +66,7 @@ class SystemController extends Controller
         } catch (ClientException $e) {
             Log::error($e);
             $message = $e->getMessage();
-            if ($e->getMessage() == "Client error: `POST https://testservices.wschilexpress.com/rating/api/v1.0/rates/courier` resulted in a `400 Bad Request` response:\n{\"data\":{\"courierServiceOptions\":[]},\"statusCode\":1,\"statusDescription\":\"EL PESO INGRESADO PARA EL SOBRE EXCEDE EL VALOR (truncated...)\n") {
+            if ($e->getMessage() == "Client error: `POST https://testservices.wschilexpress.com/rating/Api/v1.0/rates/courier` resulted in a `400 Bad Request` response:\n{\"data\":{\"courierServiceOptions\":[]},\"statusCode\":1,\"statusDescription\":\"EL PESO INGRESADO PARA EL SOBRE EXCEDE EL VALOR (truncated...)\n") {
                 $message = "EL PESO INGRESADO PARA EL SOBRE (DOCUMENTO) EXCEDE EL VALOR";
             }
             return back()->with('error', $message)->withInput();
