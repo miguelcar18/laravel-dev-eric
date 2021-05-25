@@ -89,7 +89,7 @@
                 lengthMenu: datatables_language.length_menu,
                 dom: datatables_language.dom,
                 ajax: {
-                    url: "{{ route('news::Api.author.index') }}",
+                    url: "{{ route('news::api.author.index') }}",
                     data: function (d) {
                         d.token = $('input[name=token]').val();
                         d.status = $('input[name=status]:checked').val() || 'active';

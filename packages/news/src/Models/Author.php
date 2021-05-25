@@ -2,14 +2,12 @@
 
 namespace Packages\News\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+//use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
 class Author extends BaseModel
 {
-    use Notifiable, SoftDeletes;
+    use Notifiable/*, SoftDeletes*/;
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
@@ -49,6 +47,6 @@ class Author extends BaseModel
 
     public function getFullnameAttribute()
     {
-        return (ucfirst($this->name).' '.ucfirst($this->lastName));
+        return (ucfirst($this->name) . ' ' . ucfirst($this->lastName));
     }
 }

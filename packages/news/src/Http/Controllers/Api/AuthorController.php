@@ -12,7 +12,7 @@ class AuthorController extends Controller
 {
     protected $author;
 
-    public function __construct(ApiResponse $response,  AuthorRepository $author)
+    public function __construct(ApiResponse $response, AuthorRepository $author)
     {
         parent::__construct($response);
         $this->author = $author;
@@ -25,7 +25,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = $this->author->paginate(true);
+        $authors = $this->author->paginate();
         return $this->response->withPaginator($authors, new AuthorTransformer, null, [
             'draw' => intval(request()->draw),
         ]);
