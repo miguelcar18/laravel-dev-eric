@@ -22,6 +22,7 @@ return [
 
         'create' => 'Nuevo autor',
         'edit' => 'Editar autor',
+        'show' => 'Ver autor',
         'destroy' => [
             'tooltip' => 'Eliminar autor',
             'alert' => [
@@ -49,6 +50,12 @@ return [
         'page_title' => 'Editar autor',
         'page_header' => 'Editar autor',
         'breadcrumb' => 'Editar autor',
+    ],
+
+    'show' => [
+        'page_title' => 'Ver autor',
+        'page_header' => 'Ver autor',
+        'breadcrumb' => 'Ver autor',
     ],
 
     'fields' => [

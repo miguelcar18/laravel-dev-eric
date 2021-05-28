@@ -64,7 +64,7 @@ $(document).ready(function () {
                 console.log('The next NAME\'s input attribute already exists', input);
                 return;
             }
-            
+
             var classes = jinput.attr('class');
             var styles = jinput.attr('style');
             var placeholder = jinput.attr('placeholder');
@@ -146,7 +146,7 @@ $(document).ready(function () {
             });
         });
     }
-            
+
     /*------------------------------------------------
         Theme Switch
     -------------------------------------------------*/
@@ -270,7 +270,7 @@ function datatableFilters(create_button = false, array_radios = false, more_filt
         newRecordButton += '<div class="dataTables_buttons hidden-sm-down actions dataTables_new_record_button">';
         newRecordButton += '<a href="'+url+'" class="btn btn-success btn--icon-text custom-shadow" title="'+title+'"><i class="fa fa-plus-circle"></i></a>';
         newRecordButton += '</div>';
-        
+
         $("div#new-record-button").append(newRecordButton);
     }
 
@@ -287,7 +287,7 @@ function datatableFilters(create_button = false, array_radios = false, more_filt
         });
 
         newRecordButton += '</div>';
-        
+
         $("div#new-record-button").append(newRecordButton);
     }
 

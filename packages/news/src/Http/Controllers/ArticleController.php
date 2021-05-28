@@ -19,9 +19,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = Article::orderBy('created_at', 'DESC')->paginate(8);
-//        dd($article);
-        return view('news::articles.index')->with('articles', $article);
+//        $article = Article::orderBy('created_at', 'DESC')->paginate(8);
+
+        return view('news::articles.index');
     }
 
     /**
@@ -31,8 +31,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $authors = Author::all();
-        return view('news::articles.create')->with('authors', $authors);
+        $author = Author::all()->pluck('name','id');
+//        $authors = Author::all();
+        return view('news::articles.create')->with('author', $author);
     }
 
     /**
@@ -61,7 +62,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $article = Article::findOrFail($id);
+        foreach ($article->notifications as $notification) {
+            $article = $notification->type;
+        }
         $author = Author::findOrFail($article->author_id);
 //        dd($article,$author);
         return view('news::articles.show', compact('article', 'author'));
@@ -75,8 +78,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        $authors = Author::all();
-        return view('news::articles.edit', compact('article', 'authors'));
+        $author = Author::all()->pluck('name','id');
+        return view('news::articles.edit', compact('article', 'author'));
     }
 
     /**

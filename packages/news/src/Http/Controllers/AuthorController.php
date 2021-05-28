@@ -13,6 +13,7 @@ use Packages\News\Traits\Notification;
 class AuthorController extends Controller
 {
     use Notification;
+
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +39,7 @@ class AuthorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRequest $request)
@@ -55,18 +56,24 @@ class AuthorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Author $author
+     * @param Author $author
      * @return \Illuminate\Http\Response
      */
     public function show(Author $author)
     {
+        foreach ($author->notifications as $notification) {
+            $author = $notification->type;
+        }
+//        $author->unreadNotifications()->markAsRead();
+//        dd($author);
+
         return view('news::authors.show', compact('author'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Author $author
+     * @param Author $author
      * @return \Illuminate\Http\Response
      */
     public function edit(Author $author)
@@ -77,8 +84,8 @@ class AuthorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Author $author
+     * @param \Illuminate\Http\Request $request
+     * @param Author $author
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateRequest $request, Author $author)
@@ -97,12 +104,23 @@ class AuthorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Author $author
+     * @param Author $author
      * @return \Illuminate\Http\Response
      */
     public function destroy(Author $author)
     {
         $author->delete();
         return redirect()->route('news::author.index');
+    }
+
+    public function notify($id)
+    {
+        $author = Author::find($id);
+
+        foreach ($author->notifications as $notification) {
+            $author = $notification->type;
+        }
+
+        dd($author);
     }
 }
