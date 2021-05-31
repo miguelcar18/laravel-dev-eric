@@ -38,7 +38,8 @@
                 "Packages\\News\\Providers\\RouteServiceProvider",
                 "Packages\\News\\Providers\\NewsServiceProvider",
                 "Packages\\News\\Providers\\AuthorServiceProvider",
-                "Packages\\News\\Providers\\ArticleServiceProvider"
+                "Packages\\News\\Providers\\ArticleServiceProvider",
+                "Packages\\News\\Providers\\MessageServiceProvider"
             ],
             "aliases": {
                 "PackagesSystemSettings": "Packages\\News\\Facades\\NewsSettings"

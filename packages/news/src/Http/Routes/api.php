@@ -25,4 +25,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'ArticleController@index']);
     });
 
+    Route::group(['prefix' => 'message', 'as' => 'message.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'MessageController@index']);
+    });
+
 });

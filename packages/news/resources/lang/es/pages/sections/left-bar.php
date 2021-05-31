@@ -15,4 +15,5 @@ return [
     'customer' => 'Clientes',
     'author' => 'Autores',
     'article' => 'Articulos',
+    'message' => 'Correos',
 ];
