@@ -73,7 +73,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 {!! Form::label('body', trans('news::pages/article.fields.body'), []) !!}
-                                {!! Form::textarea('body', old('body') ?? $article->body, ['class' => 'form-control', 'required' => true, 'readonly' ]) !!}
+                                {!! Form::textarea('body', old('body') ?? $article->body, ['class' => ['form-control','textarea_content'], 'required' => true, 'readonly' ]) !!}
                                 @includeWhen($errors->has('body'), 'admin::partials.forms.field-error', ['field' => 'body'])
                             </div>
                         </div>
@@ -100,6 +100,22 @@
         $(document).ready(function (){
 
         })
+    </script>
+    <script type="text/javascript">
+        $('.textarea_content').trumbowyg({
+            btns: [
+                ['strong', 'em'],
+                ['link'],
+                ['insertImage']
+            ],
+            autogrow: true,
+            urlProtocol: true,
+            imageWidthModalEdit: true,
+            minimalLinks: true,
+            defaultLinkTarget: '_blank',
+            lang: 'es',
+            disabled: true
+        });
     </script>
 @endsection
 

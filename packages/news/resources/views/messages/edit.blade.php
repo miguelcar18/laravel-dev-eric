@@ -87,7 +87,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 {!! Form::label('content', trans('news::pages/message.fields.content'), []) !!}
-                                {!! Form::textarea('content', old('content') ?? $message->content, ['class' => 'form-control', 'required' => true ]) !!}
+                                {!! Form::textarea('content', old('content') ?? $message->content, ['class' => ['form-control','textarea_content'], 'required' => true]) !!}
                                 @includeWhen($errors->has('content'), 'admin::partials.forms.field-error', ['field' => 'content'])
                             </div>
                         </div>
@@ -99,8 +99,8 @@
         <div class="card-footer">
             <div class="row justify-content-end">
                 <div class="btn-demo">
-                    <a class="btn btn-secondary" href="{{ route('news::article.index') }}" title="{{ __('Cancel') }}">{{ __('Cancel') }}</a>
-                    {!! Form::hidden('return_to', 'news::article.index') !!}&nbsp;
+                    <a class="btn btn-secondary" href="{{ route('news::message.index') }}" title="{{ __('Cancel') }}">{{ __('Cancel') }}</a>
+                    {!! Form::hidden('return_to', 'news::message.index') !!}&nbsp;
                 </div>
                 <div class="btn-demo">
                     {!! Form::submit(__("Save and create another"), [
@@ -131,6 +131,21 @@
                     $("input[name=slug]").val(slugify($(this).val()));
                 }
             });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.textarea_content').trumbowyg({
+            btns: [
+                ['strong', 'em', 'del'],
+                ['link'],
+                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+            ],
+            autogrow: true,
+            urlProtocol: true,
+            minimalLinks: true,
+            defaultLinkTarget: '_blank',
+            lang: 'es',
         });
     </script>
 @endsection

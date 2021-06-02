@@ -24,6 +24,10 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('/vendor/admin/vendor/dist/js/adminlte.js') }}"></script>
 
+<!-- PAGE TRUMBOWYG -->
+<script src="{{ asset('/vendor/admin/js/trumbowyg/dist/trumbowyg.min.js') }}"></script>
+<script src="{{ asset('/vendor/admin/js/trumbowyg/dist/langs/es.min.js') }}"></script>
+
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="{{ asset('/vendor/admin/vendor/plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>

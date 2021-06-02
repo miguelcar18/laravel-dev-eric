@@ -28,14 +28,14 @@ class MessageController extends Controller
         return redirect()->route('news::message.index');
     }
 
-    public function show (Message $message)
+    public function show(Message $message)
     {
         foreach ($message->notifications as $notification)
         {
             $message = $notification->type;
         }
 
-        return view('news::messages.show', compact($message));
+        return view('news::messages.show', compact('message'));
     }
 
     public function edit(Message $message)

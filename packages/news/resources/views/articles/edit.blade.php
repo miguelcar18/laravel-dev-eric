@@ -64,7 +64,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 {!! Form::label('body', trans('news::pages/article.fields.body'), []) !!}
-                                {!! Form::textarea('body', old('body') ?? $article->body, ['class' => 'form-control', 'required' => true ]) !!}
+                                {!! Form::textarea('body', old('body') ?? $article->body, ['class' => ['form-control','textarea_content'], 'required' => true ]) !!}
                                 @includeWhen($errors->has('body'), 'admin::partials.forms.field-error', ['field' => 'body'])
                             </div>
                         </div>
@@ -95,6 +95,22 @@
                     $("input[name=slug]").val(slugify($(this).val()));
                 }
             });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.textarea_content').trumbowyg({
+            btns: [
+                ['strong', 'em'],
+                ['link'],
+                ['insertImage']
+            ],
+            autogrow: true,
+            urlProtocol: true,
+            imageWidthModalEdit: true,
+            minimalLinks: true,
+            defaultLinkTarget: '_blank',
+            lang: 'es',
         });
     </script>
 @endsection
