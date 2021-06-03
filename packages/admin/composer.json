@@ -16,6 +16,9 @@
         "jenssegers/date": "^4.0",
         "jenssegers/model": "^1.2",
         "laravelcollective/html": "^6.0",
+        "laravel/jetstream": "^2.3",
+        "laravel/sanctum": "^2.6",
+        "livewire/livewire": "^2.0",
         "league/fractal": "^0.18.0",
         "pragmarx/coollection": "^0.7.1",
         "pragmarx/countries-laravel": "^0.6.3",
@@ -48,6 +51,9 @@
                 "Packages\\Admin\\Providers\\EventServiceProvider",
                 "Packages\\Admin\\Providers\\FacadesServiceProvider",
                 "Packages\\Admin\\Providers\\RouteServiceProvider",
+                "Packages\\Admin\\Providers\\AuthServiceProvider",
+                "Packages\\Admin\\Providers\\FortifyServiceProvider",
+                "Packages\\Admin\\Providers\\JetstreamServiceProvider",
 
                 "EllipseSynergie\\ApiResponse\\Laravel\\ResponseServiceProvider"
             ],

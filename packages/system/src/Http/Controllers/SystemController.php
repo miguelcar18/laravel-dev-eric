@@ -56,7 +56,7 @@ class SystemController extends Controller
                 ],
             ]);
 
-            $result = json_decode($res->getBody())->data;
+            $result = json_Packages\Admin\Http\Controllers\SystemUserController($res->getBody())->data;
             dd($result);
             return $result;
 

@@ -20,13 +20,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::resources([
         'customer' => 'CustomerController',
     ]);
-
-    Route::resources([
-        'author' => 'AuthorController',
-    ]);
-
-    Route::resources([
-        'post' => 'PostController',
-    ]);
-
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

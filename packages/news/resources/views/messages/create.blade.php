@@ -141,12 +141,6 @@
                 ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
             ],
             autogrow: true,
-            semantic: {
-                'b': 'strong',
-                'i': 'em',
-                's': 'del',
-                'ins': 'del',
-            },
             lang: 'es',
         });
     </script>
