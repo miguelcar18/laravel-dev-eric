@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +13,12 @@ use Inertia\Inertia;
 |
 */
 
-//Route::get('admin::/', function () {
-//    return Inertia::render('Welcome', [
-//        'canLogin' => Route::has('admin::login'),
-//        'canRegister' => Route::has('admin::register'),
-//        'laravelVersion' => Application::VERSION,
-//        'phpVersion' => PHP_VERSION,
-//    ]);
-//});
-//
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//    return Inertia::render('Dashboard');
-//})->name('dashboard');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

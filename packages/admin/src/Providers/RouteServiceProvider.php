@@ -17,15 +17,6 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'Packages\Admin\Http\Controllers';
 
     /**
-     * The path to the "home" route for your application.
-     *
-     * This is used by Laravel authentication to redirect users after login.
-     *
-     * @var string
-     */
-    public const HOME = '/dashboard';
-
-    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
@@ -45,10 +36,8 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
+        $this->mapAuthRoutes();
         $this->mapWebRoutes();
-
-        //
     }
 
     /**

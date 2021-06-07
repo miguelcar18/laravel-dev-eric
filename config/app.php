@@ -93,7 +93,7 @@ return [
     |
      */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -170,14 +170,10 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
-        Packages\Admin\Providers\AuthServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
-        Packages\Admin\Providers\FortifyServiceProvider::class,
-        Packages\Admin\Providers\JetstreamServiceProvider::class,
 
     ],
 

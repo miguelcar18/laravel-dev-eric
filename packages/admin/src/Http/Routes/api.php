@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,12 +18,4 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);
     });
-});
-
-Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-Route::middleware('auth:Api')->get('/user', function (Request $request) {
-    return $request->user();
 });
