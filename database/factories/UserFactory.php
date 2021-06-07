@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Packages\Admin\Models\Team;
-use Packages\Admin\Models\User;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;

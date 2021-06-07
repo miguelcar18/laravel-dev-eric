@@ -77,4 +77,14 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace("{$this->namespace}\Api")
             ->group(__DIR__ . '/../Http/Routes/api.php');
     }
+
+    protected function mapAuthRoutes()
+    {
+        Route::middleware('web')
+            ->domain(\App::environment('local') ? '' : config('app.url'))
+            ->name('admin::')
+            ->namespace("{$this->namespace}\Auth")
+            ->group(__DIR__ . '/../Http/Routes/auth.php');
+    }
+
 }

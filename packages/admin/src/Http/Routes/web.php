@@ -1,6 +1,9 @@
 <?php
 
 //use Illuminate\Routing\Route;
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,21 @@ Route::group(['middleware' => ['web']], function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
+    return Inertia::render('Dashboard');
+})->name('dashboard');
+
+Route::get('dashboard', function () {
+    return 'hola';
+    return Inertia::render('Dashboard');
+//    return redirect()->route('admin::home');
 })->name('dashboard');

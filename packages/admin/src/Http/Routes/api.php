@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +21,10 @@ Route::group(['middleware' => ['web']], function () {
     });
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware('auth:Api')->get('/user', function (Request $request) {
+    return $request->user();
+});

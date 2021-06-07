@@ -1,4 +1,25 @@
-<x-guest-layout>
+@extends('admin::layouts.app')
+
+@section('page-title')
+    {{ trans('news::pages/article.create.page_title') }}
+@endsection
+
+@section('page-description')
+@endsection
+
+@section('page-header')
+    - {{ trans('news::pages/article.create.page_header') }}
+@endsection
+
+@section('breadcrumbs')
+    @include('admin::partials.page.breadcrumbs', [ 'breadcrumbs' => [
+    ['text' => trans('news::pages/article.create.breadcrumb')]
+]])
+@endsection
+
+@section('page-content')
+
+    <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -46,3 +67,13 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+
+@endsection
+
+@section('scripts')
+    @parent
+@endsection
+
+@section('styles')
+    @parent
+@endsection
