@@ -1,7 +1,6 @@
 <?php
 
 //use Illuminate\Routing\Route;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -28,5 +27,3 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware('guest')->name('dashboard');
-
-require __DIR__.'/auth.php';
