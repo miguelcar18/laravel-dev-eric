@@ -71,9 +71,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
             ->domain(\App::environment('local') ? '' : config('app.url'))
-            ->name('admin::')
+            ->name('')
             ->namespace("{$this->namespace}\Auth")
-            ->group(__DIR__ . '/../Http/Routes/auth.php');
+            ->group(__DIR__. '/../Http/Routes/auth.php');
     }
 
 }

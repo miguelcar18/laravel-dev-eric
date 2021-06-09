@@ -1,7 +1,9 @@
 <?php
 
 //use Illuminate\Routing\Route;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 
@@ -30,3 +24,9 @@ Route::group(['middleware' => ['web']], function () {
         'customer' => 'CustomerController',
     ]);
 });
+
+Route::get('dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware('guest')->name('dashboard');
+
+require __DIR__.'/auth.php';
