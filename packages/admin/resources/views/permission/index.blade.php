@@ -45,14 +45,14 @@
         const tableActionButtons = (data) => {
             var html = '';
 
-            if (data.can_edit) {
+            // if (data.can_edit) {
                 html+='<button onclick="location.href=\'' + data.edit_route + '\'"';
                 html+='class="btn btn-outline-warning btn--icon"';
                 html+='title="{{ trans('admin::pages/permission.index.edit') }}"';
                 html+='><i class="fa fa-edit"></i></button>';
-            }
+            // }
 
-            if (data.can_delete) {
+            // if (data.can_delete) {
                 html+='<button class="btn btn-outline-danger btn--icon"';
                 html+='title="{{ trans('admin::pages/permission.index.destroy.tooltip') }}"';
                 html+='data-trigger="sweet-alert"';
@@ -64,7 +64,7 @@
                 html+='data-sweet-alert-cancel-text="{{ trans('admin::pages/permission.index.destroy.alert.cancel') }}"';
                 html+='><i class="fa fa-delete"></i></button>';
                 html+='<form action="' + data.delete_route + '" id="delete-' + data.id + '" style="display: none;" method="POST">{{ method_field('DELETE') }}{{ csrf_field() }}</form>';
-            }
+            // }
 
             if (html == "") {
                 html+="N/A";
