@@ -21,7 +21,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
  */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('users', 'SystemUserController');
     Route::resource('articles', 'SystemArticleController');
     Route::get('/traits/mail', 'SystemUserController@mailTrait');

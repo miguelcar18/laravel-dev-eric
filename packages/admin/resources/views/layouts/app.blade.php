@@ -33,3 +33,31 @@
         <!-- /.content-wrapper -->
     </div>
 @endsection
+
+@section('scripts')
+<script type="text/javascript">
+
+    setInterval(refreshJWToken, 3000000);
+    function refreshJWToken(){
+        $.post('{{ route('admin::api.auth.token.refresh') }}', {
+            token: $('input[name=token]').val()
+        }, (response, status, xhr) => {
+            $('input[name=token]').val(response.data.access_token);
+        }, 'json')
+        .fail( (xhr, status, response) => {
+            location.reload();
+        } );
+    }
+
+    setInterval(refreshCsrfToken, 3000000);
+    function refreshCsrfToken(){
+        $.get('{{ route('admin::refresh-csrf') }}', {}, (response, status, xhr) => {
+            $('input[name=_token]').val(response.token);
+        }, 'json')
+        .fail( (xhr, status, response) => {
+            location.reload();
+        } );
+    }
+
+</script>
+@endsection

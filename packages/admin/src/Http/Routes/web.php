@@ -15,7 +15,13 @@ use Inertia\Inertia;
 |
  */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::get('refresh-csrf', function () {
+    return response()->json([
+        'token' => csrf_token(),
+    ], 200);
+})->name('refresh-csrf');
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 

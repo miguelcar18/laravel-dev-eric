@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
+    Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+    Route::post('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
+    Route::post('me', ['as' => 'me', 'uses' => 'AuthController@me']);
+    Route::post('refresh', ['as' => 'token.refresh', 'uses' => 'AuthController@refresh']);
+});
+
+Route::group(['middleware' => ['auth.jwt', 'verified']], function () {
 
     Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);

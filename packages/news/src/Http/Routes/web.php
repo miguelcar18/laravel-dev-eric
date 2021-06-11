@@ -16,7 +16,7 @@
 //use Packages\News\Http\Controllers\ArticleController;
 //use Packages\News\Http\Controllers\AuthorController;
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('author', 'AuthorController');
 //        Route::resource('news_articles', ArticleController::class);
     Route::resource('article', 'ArticleController');

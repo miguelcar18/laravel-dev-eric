@@ -19,7 +19,7 @@
 
 @section('page-content')
     <div class="card">
-
+        @jwt_field
         <div class="card-body">
 
             <div class="row">

@@ -15,7 +15,7 @@
 //
 //});
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth.jwt', 'verified']], function () {
 
     Route::group(['prefix' => 'author', 'as' => 'author.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'AuthorController@index']);
