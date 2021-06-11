@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);
+    });
+
+    Route::group(['prefix' => 'permission', 'as' => 'permission.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'PermissionController@index']);
+    });
+
+    Route::group(['prefix' => 'group', 'as' => 'group.'], function () {
+        Route::get('/', ['as' => 'index', 'uses' => 'GroupController@index']);
     });
 });

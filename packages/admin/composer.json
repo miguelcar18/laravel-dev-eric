@@ -20,7 +20,8 @@
         "pragmarx/coollection": "^0.7.1",
         "pragmarx/countries-laravel": "^0.6.3",
         "ramsey/uuid-doctrine": "^1.6",
-        "webpatser/laravel-uuid": "^3.0"
+        "webpatser/laravel-uuid": "^3.0",
+        "mateusjunges/laravel-acl": "^2.6"
     },
     "require-dev": {
         "laravel/breeze": "^1.2"

@@ -5,7 +5,10 @@
     "Author created": "¡El autor ha sido creado!",
     "Author deleted": "¡El autor ha sido eliminado!",
     "Author updated": "¡El autor ha sido actualziado!",
-    "Post created": "¡El publicacion ha sido creada!",
-    "Post deleted": "¡El publicacion ha sido eliminada!",
-    "Post updated": "¡El publicacion ha sido actualizada!"
+    "Permission created": "¡El permiso ha sido creado!",
+    "Permission deleted": "¡El permiso ha sido eliminado!",
+    "Permission updated": "¡El permiso ha sido actualizado!",
+    "Group created": "¡El grupo ha sido creado!",
+    "Group deleted": "¡El grupo ha sido eliminado!",
+    "Group updated": "¡El grupo ha sido actualizado!"
 }

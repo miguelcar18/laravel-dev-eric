@@ -1,3 +1,13 @@
+@extends('admin::layouts.master')
+
+@section('screen')
+    <div class="wrapper">
+
+        @include("admin::partials.page.preloader")
+        @include('admin::partials.page.header')
+        @include('admin::partials.page.left-bar')
+        <div class="content-wrapper">
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -15,3 +25,6 @@
         </div>
     </div>
 </x-app-layout>
+
+        </div>
+@endsection

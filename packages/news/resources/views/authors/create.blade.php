@@ -13,8 +13,10 @@
 
 @section('breadcrumbs')
     @include('admin::partials.page.breadcrumbs', [ 'breadcrumbs' => [
-    ['text' => trans('news::pages/author.create.breadcrumb')]
-]])
+        ['href' => route('news::author.index'), 'text' => trans('news::pages/author.index.breadcrumb')],
+        ['text' => trans('news::pages/author.create.breadcrumb')]
+    ]])
+
 @endsection
 
 @section('page-content')

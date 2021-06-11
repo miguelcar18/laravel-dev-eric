@@ -5,10 +5,11 @@ namespace Packages\Admin\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Junges\ACL\Traits\UsersTrait;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, UsersTrait;
 
     /**
      * The attributes that are mass assignable.

@@ -28,6 +28,16 @@ return [
             'route' => 'news::message.index',
             'icon' => 'plus-square',
         ],
+        [
+            'text' => 'admin::pages/sections/left-bar.permission',
+            'route' => 'admin::permission.index',
+            'icon' => 'plus-square',
+        ],
+        [
+            'text' => 'admin::pages/sections/left-bar.group',
+            'route' => 'admin::group.index',
+            'icon' => 'plus-square',
+        ],
 
     ],
 ];

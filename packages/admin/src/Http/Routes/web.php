@@ -22,6 +22,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resources([
         'customer' => 'CustomerController',
     ]);
+
+    Route::resources([
+        'permission' => 'PermissionController',
+    ]);
+
+    Route::resources([
+        'group' => 'GroupController',
+    ]);
+
 });
 
 Route::get('dashboard', function () {
