@@ -23,6 +23,7 @@ class GroupTransformer extends Fractal\TransformerAbstract
             'deleted_at' => empty($deleted_at = $group->deleted_at) ? false : $deleted_at->toW3cString(),
             'delete_route' => route('admin::group.destroy', $group),
             'edit_route' => route('admin::group.edit', $group),
+            'assign_permission_route' => route('admin::group.group_permission', $group),
             'name' => $group->name,
             'slug' => $group->slug,
             'description' => $group->description,

@@ -16,5 +16,6 @@ return [
     'author' => 'Autores',
     'article' => 'Articulos',
     'permission' => 'Permisos',
-    'group' => 'Grupo',
+    'group' => 'Grupos',
+    'assign_permission' => 'Asignar permisos',
 ];

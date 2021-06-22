@@ -45,14 +45,21 @@
         const tableActionButtons = (data) => {
             var html = '';
 
-            if (data.can_edit) {
+            // if (data.can_edit) {
                 html+='<button onclick="location.href=\'' + data.edit_route + '\'"';
                 html+='class="btn btn-outline-warning btn--icon"';
                 html+='title="{{ trans('admin::pages/group.index.edit') }}"';
-                html+='><i class="fa fa-edit"></i></button>';
-            }
+                html+='><i class="fa fa-edit"></i></button> &nbsp;';
+            // }
 
-            if (data.can_delete) {
+            // if (data.can_assign) {
+                html+='<button onclick="location.href=\'' + data.assign_permission_route + '\'"';
+                html+='class="btn btn-outline-primary btn--icon"';
+                html+='title="{{ trans('admin::pages/group.index.assign_permission') }}"';
+                html+='><i class="fa fa-tags"></i></button> &nbsp;';
+            // }
+
+            // if (data.can_delete) {
                 html+='<button class="btn btn-outline-danger btn--icon"';
                 html+='title="{{ trans('admin::pages/group.index.destroy.tooltip') }}"';
                 html+='data-trigger="sweet-alert"';
@@ -62,9 +69,9 @@
                 html+='data-sweet-alert-confirm-text="{{ trans('admin::pages/group.index.destroy.alert.confirm') }}"';
                 html+='data-sweet-alert-confirm-action="document.getElementById(\'delete-' + data.id + '\').submit()"';
                 html+='data-sweet-alert-cancel-text="{{ trans('admin::pages/group.index.destroy.alert.cancel') }}"';
-                html+='><i class="fa fa-delete"></i></button>';
+                html+='><i class="fa fa-trash-alt"></i></button>';
                 html+='<form action="' + data.delete_route + '" id="delete-' + data.id + '" style="display: none;" method="POST">{{ method_field('DELETE') }}{{ csrf_field() }}</form>';
-            }
+            // }
 
             if (html == "") {
                 html+="N/A";

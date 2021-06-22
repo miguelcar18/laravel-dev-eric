@@ -4,6 +4,7 @@ namespace Packages\Admin\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Packages\Admin\Models\Group;
+use Packages\Admin\Models\Permission;
 
 class GroupController extends Controller
 {
@@ -51,5 +52,14 @@ class GroupController extends Controller
         $group->delete();
 
         return redirect()->route('admin::group.index')->withSuccess(__('Group deleted'));
+    }
+
+    public function group_permission($group)
+    {
+//        dd($group);
+        $groups = Group::all()->pluck('slug','id');
+//        $groups = Group::all()->pluck('slug','slug');
+//        dd($permission);
+        return view('admin::group.groupPermission',compact('group','groups'));
     }
 }

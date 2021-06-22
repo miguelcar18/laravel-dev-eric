@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resources([
         'group' => 'GroupController',
     ]);
+    Route::get('group_permission/{group}','GroupController@group_permission')->name('group.group_permission');
+    Route::post('assig_permission/{group}','GroupController@assigPermission')->name('group.assig_permission');
 
 });
 

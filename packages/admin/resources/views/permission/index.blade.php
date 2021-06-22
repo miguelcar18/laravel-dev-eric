@@ -49,8 +49,15 @@
                 html+='<button onclick="location.href=\'' + data.edit_route + '\'"';
                 html+='class="btn btn-outline-warning btn--icon"';
                 html+='title="{{ trans('admin::pages/permission.index.edit') }}"';
-                html+='><i class="fa fa-edit"></i></button>';
+                html+='><i class="fa fa-edit"></i></button> &nbsp;';
             // }
+
+            {{--if (data.can_show) {--}}
+                html+='<button onclick="location.href=\'' + data.show_route + '\'"';
+                html+='class="btn btn-outline-info btn--icon"';
+                html+='title="{{ trans('news::pages/permission.index.show') }}"';
+                html+='><i class="fa fa-eye"></i></button> &nbsp;';
+            {{--}--}}
 
             // if (data.can_delete) {
                 html+='<button class="btn btn-outline-danger btn--icon"';
@@ -62,7 +69,7 @@
                 html+='data-sweet-alert-confirm-text="{{ trans('admin::pages/permission.index.destroy.alert.confirm') }}"';
                 html+='data-sweet-alert-confirm-action="document.getElementById(\'delete-' + data.id + '\').submit()"';
                 html+='data-sweet-alert-cancel-text="{{ trans('admin::pages/permission.index.destroy.alert.cancel') }}"';
-                html+='><i class="fa fa-delete"></i></button>';
+                html+='><i class="fa fa-trash-alt"></i></button>';
                 html+='<form action="' + data.delete_route + '" id="delete-' + data.id + '" style="display: none;" method="POST">{{ method_field('DELETE') }}{{ csrf_field() }}</form>';
             // }
 

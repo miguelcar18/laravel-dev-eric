@@ -22,6 +22,7 @@ return [
 
         'create' => 'Nuevo grupo',
         'edit' => 'Editar grupo',
+        'assign_permission' => 'Asignar permiso',
         'destroy' => [
             'tooltip' => 'Eliminar grupo',
             'alert' => [
@@ -51,10 +52,17 @@ return [
         'breadcrumb' => 'Editar grupo',
     ],
 
+    'group_permission' => [
+        'page_title' => 'Asignar permiso',
+        'page_header' => 'Asignar permiso',
+        'breadcrumb' => 'Asignar permiso',
+    ],
+
     'fields' => [
         'name' => 'Nombre',
         'slug' => 'Slug',
-        'description' => 'description',
+        'description' => 'Descripcion',
+        'groups' => 'Grupos',
         'submit' => [
             'save' => 'Guardar',
         ],

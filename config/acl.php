@@ -21,12 +21,12 @@ return [
         /*
          | The model you want to use as Permission model must use the MateusJunges\ACL\Traits\PermissionsTrait
          */
-        'permission' => Junges\ACL\Http\Models\Permission::class,
+        'permission' => \Packages\Admin\Models\Permission::class,
 
         /*
          | The model you want to use as Group model must use the MateusJunges\ACL\Traits\GroupsTrait
          */
-        'group'      => Junges\ACL\Http\Models\Group::class,
+        'group'      => \Packages\Admin\Models\Group::class,
     ],
 
     /*
@@ -41,10 +41,10 @@ return [
     | following configuration:
     |
      */
-    'route_model_binding_keys' => [
-        'group_model' => 'slug',
-        'permission_model' => 'slug',
-    ],
+//    'route_model_binding_keys' => [
+//        'group_model' => 'slug',
+//        'permission_model' => 'slug',
+//    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -79,7 +79,9 @@ return [
     | If you want to customize the admin-permission, you can change it here.
     | By default, it is set to 'admin'.
     */
-    'admin_permission' => 'admin',
+//    'administrador_permission' => 'administrador',
+//    'supervisor_permission' => 'supervisor',
+//    'redactor_permission' => 'redactor',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,5 +93,5 @@ return [
     | The solutions will then be automatically registered with ignition if its installed.
     |
     */
-    'offer_solutions' => false,
+//    'offer_solutions' => false,
 ];
