@@ -56,7 +56,6 @@ class GroupController extends Controller
 
     public function group_permission($group)
     {
-//        dd($group);
         $groups = Group::all()->pluck('slug','id');
 //        $groups = Group::all()->pluck('slug','slug');
 //        dd($permission);

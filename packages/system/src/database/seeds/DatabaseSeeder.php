@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
 //        $this->call(SystemSettingTableSeeder::class);
 //        $this->call(SystemRegionTableSeeder::class);
 //        $this->call(SystemCountyTableSeeder::class);
-        $this->call(SystemUserTableSeeder::class);
-        $this->call(SystemArticleTableSeeder::class);
+//        $this->call(SystemUserTableSeeder::class);
+//        $this->call(SystemArticleTableSeeder::class);
+        $this->call(GroupTableSeeder::class);
+        $this->call(PermissionTableSeeder::class);
+        $this->call(GroupPermissionTableSeeder::class);
     }
 }

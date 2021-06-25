@@ -5,12 +5,13 @@ namespace Packages\Admin\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Junges\ACL\Traits\ACLWildcardsTrait;
 use Junges\ACL\Traits\UsersTrait;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable, UsersTrait;
+    use HasFactory, Notifiable, UsersTrait, ACLWildcardsTrait;
 
     /**
      * The attributes that are mass assignable.
