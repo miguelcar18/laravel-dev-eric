@@ -41,6 +41,7 @@ class News extends Command
             '--class'   =>  'Packages\\News\\Database\\Seeds\\DatabaseSeeder',
         ]);
         $this->option('--force');
+
         return 0;
     }
 }

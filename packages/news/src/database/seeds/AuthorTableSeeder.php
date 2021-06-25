@@ -14,13 +14,13 @@ class AuthorTableSeeder extends Seeder
      */
     public function run()
     {
-        Author::create([
+        Author::firstOrCreate([
             'name'  =>  'Alexis',
             'lastName'  =>  'Diaz',
             'dni'   =>  '41653151651',
             'phone' =>  '51651531'
         ]);
-        Author::create([
+        Author::firstOrCreate([
             'name'  =>  'Luis',
             'lastName'  =>  'Ojeda',
             'dni'   =>  '41414351',

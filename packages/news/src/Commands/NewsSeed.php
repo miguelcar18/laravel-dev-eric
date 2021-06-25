@@ -41,6 +41,7 @@ class NewsSeed extends Command
         $this->call('db:seed',[
             '--class'   =>  'Packages\\News\\Database\\Seeds\\DatabaseSeeder',
         ]);
+        $this->option('--force');
 
         return 0;
     }

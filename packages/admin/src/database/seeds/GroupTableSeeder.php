@@ -14,17 +14,17 @@ class GroupTableSeeder extends Seeder
      */
     public function run()
     {
-        Group::create([
+        Group::firstOrCreate([
             'name' => 'administrador',
             'slug' => 'administrador',
             'description' => 'administrador del sistema'
         ]);
-        Group::create([
+        Group::firstOrCreate([
             'name' => 'supervisor',
             'slug' => 'supervisor',
             'description' => 'supervisor del sistema'
         ]);
-        Group::create([
+        Group::firstOrCreate([
             'name' => 'redactor',
             'slug' => 'redactor',
             'description' => 'redactor del sistema'

@@ -15,14 +15,14 @@ class ArticleTableSeeder extends Seeder
 
     public function run()
     {
-        Article::create([
+        Article::firstOrCreate([
             'title' =>  'titulo',
             'subtitle'  =>  'subtitulo',
             'body'  =>  'cuerpo del articulo',
             'section'  =>  'deportes',
             'author'    =>  'pedro'
         ]);
-        Article::create([
+        Article::firstOrCreate([
             'title' =>  'titulo2',
             'subtitle'  =>  'subtitulo2',
             'body'  =>  'cuerpo del articulo2',
