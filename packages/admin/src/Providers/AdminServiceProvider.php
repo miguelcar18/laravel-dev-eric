@@ -4,6 +4,7 @@ namespace Packages\Admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Packages\Admin\Console\Commands\AdminSeed;
+use Packages\Admin\Console\Commands\Admin;
 
 class AdminServiceProvider extends ServiceProvider
 {
