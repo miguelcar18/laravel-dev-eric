@@ -11,7 +11,7 @@ class SystemSeed extends Command
      *
      * @var string
      */
-    protected $signature = 'system:seed';
+    protected $signature = 'system:seed {--F|force}';
 
     /**
      * The console command description.

@@ -11,7 +11,7 @@ class NewsSeed extends Command
      *
      * @var string
      */
-    protected $signature = 'news:seed';
+    protected $signature = 'news:seed {--F|force}';
 
     /**
      * The console command description.

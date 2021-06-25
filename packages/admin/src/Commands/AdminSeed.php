@@ -11,7 +11,7 @@ class AdminSeed extends Command
      *
      * @var string
      */
-    protected $signature = 'admin:seed';
+    protected $signature = 'admin:seed {--F|force}';
 
     /**
      * The console command description.
