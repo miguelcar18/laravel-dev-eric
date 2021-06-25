@@ -18,7 +18,7 @@ class SystemSeed extends Command
      *
      * @var string
      */
-    protected $description = 'Run the system Package database seeds';
+    protected $description = 'Run the system Package database seeds ';
 
     /**
      * Create a new command instance.
@@ -40,8 +40,9 @@ class SystemSeed extends Command
         $this->info('Running System Seeder...');
         $this->call('db:seed', [
             '--class' => 'Packages\\System\\Database\\Seeds\\DatabaseSeeder',
+            '--force' => $this->option('force'),
         ]);
-        $this->option('--force');
+        
 
         return 0;
     }

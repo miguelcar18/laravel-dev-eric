@@ -3,6 +3,7 @@
 namespace Packages\News\Database\Seeds;
 
 use Illuminate\Database\Seeder;
+use Packages\Admin\Models\Permission;
 
 class PermissionTableSeeder extends Seeder
 {

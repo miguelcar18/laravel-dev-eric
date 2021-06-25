@@ -18,7 +18,7 @@ class AdminSeed extends Command
      *
      * @var string
      */
-    protected $description = 'Run the system Package database seeds';
+    protected $description = 'Run the Admin Package database seeds';
 
     /**
      * Create a new command instance.
@@ -40,8 +40,9 @@ class AdminSeed extends Command
         $this->info('Running Admin Seeder...');
         $this->call('db:seed',[
             '--class'   =>  'Packages\\Admin\\Database\\Seeds\\DatabaseSeeder',
+            '--force' => $this->option('force'),
         ]);
-        $this->option('--force');
+        
 
         return 0;
     }

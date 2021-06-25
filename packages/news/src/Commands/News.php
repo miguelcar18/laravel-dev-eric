@@ -39,9 +39,9 @@ class News extends Command
     {
         $this->call('db:seed',[
             '--class'   =>  'Packages\\News\\Database\\Seeds\\DatabaseSeeder',
+            '--force' => $this->option('force'),
         ]);
-        $this->option('--force');
-
+        
         return 0;
     }
 }

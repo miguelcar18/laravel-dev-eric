@@ -18,7 +18,7 @@ class NewsSeed extends Command
      *
      * @var string
      */
-    protected $description = 'Run the system Package database seeds';
+    protected $description = 'Run the News Package database seeds';
 
     /**
      * Create a new command instance.
@@ -40,8 +40,8 @@ class NewsSeed extends Command
         $this->info('Running News Seeder...');
         $this->call('db:seed',[
             '--class'   =>  'Packages\\News\\Database\\Seeds\\DatabaseSeeder',
+            '--force' => $this->option('force'),
         ]);
-        $this->option('--force');
 
         return 0;
     }
