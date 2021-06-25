@@ -4,6 +4,7 @@ namespace Packages\System\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Packages\System\Console\Commands\SystemSeed;
+use Packages\System\Console\Commands\System;
 
 class SystemServiceProvider extends ServiceProvider
 {
@@ -82,6 +83,7 @@ class SystemServiceProvider extends ServiceProvider
     {
         $this->commands([
             SystemSeed::class,
+            System::class,
         ]);
 
         return $this;

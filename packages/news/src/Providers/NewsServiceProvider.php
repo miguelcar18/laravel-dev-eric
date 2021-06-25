@@ -3,6 +3,7 @@
 namespace Packages\News\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Packages\News\Console\Commands\News;
 use Packages\News\Console\Commands\NewsSeed;
 
 class NewsServiceProvider extends ServiceProvider
@@ -81,6 +82,7 @@ class NewsServiceProvider extends ServiceProvider
     {
         $this->commands([
             NewsSeed::class,
+            News::class
         ]);
 
         return $this;

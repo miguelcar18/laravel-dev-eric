@@ -82,6 +82,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->commands([
             AdminSeed::class,
+            Admin::class,
         ]);
 
         return $this;
