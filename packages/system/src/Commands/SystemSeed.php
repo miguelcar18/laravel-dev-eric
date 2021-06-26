@@ -42,7 +42,6 @@ class SystemSeed extends Command
             '--class' => 'Packages\\System\\Database\\Seeds\\DatabaseSeeder',
             '--force' => $this->option('force'),
         ]);
-        
 
         return 0;
     }

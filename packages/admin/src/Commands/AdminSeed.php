@@ -42,7 +42,6 @@ class AdminSeed extends Command
             '--class'   =>  'Packages\\Admin\\Database\\Seeds\\DatabaseSeeder',
             '--force' => $this->option('force'),
         ]);
-        
 
         return 0;
     }
