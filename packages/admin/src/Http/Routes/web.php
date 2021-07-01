@@ -21,7 +21,7 @@ Route::get('refresh-csrf', function () {
     ], 200);
 })->name('refresh-csrf');
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'can_use_route']], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 
@@ -36,10 +36,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resources([
         'group' => 'GroupController',
     ]);
-    Route::get('group_permission/{group}','GroupController@group_permission')->name('group.group_permission');
-    Route::post('assig_permission/{group}','GroupController@assigPermission')->name('group.assig_permission');
-    Route::get('group_user/{group}','GroupController@group_user')->name('group.group_user');
-    Route::post('assig_user/{group}','GroupController@assigUser')->name('group.assig_user');
+    Route::get('group_permission/{group}', 'GroupController@group_permission')->name('group.group_permission');
+    Route::post('assig_permission/{group}', 'GroupController@assigPermission')->name('group.assig_permission');
+    Route::get('group_user/{group}', 'GroupController@group_user')->name('group.group_user');
+    Route::post('assig_user/{group}', 'GroupController@assigUser')->name('group.assig_user');
 
 });
 

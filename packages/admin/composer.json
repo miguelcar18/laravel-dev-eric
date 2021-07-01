@@ -54,6 +54,7 @@
                 "Packages\\Admin\\Providers\\EventServiceProvider",
                 "Packages\\Admin\\Providers\\FacadesServiceProvider",
                 "Packages\\Admin\\Providers\\RouteServiceProvider",
+                "Packages\\Admin\\Providers\\UserServiceProvider",
 
                 "EllipseSynergie\\ApiResponse\\Laravel\\ResponseServiceProvider"
             ],

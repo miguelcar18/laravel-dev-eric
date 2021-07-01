@@ -20,7 +20,7 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::post('refresh', ['as' => 'token.refresh', 'uses' => 'AuthController@refresh']);
 });
 
-Route::group(['middleware' => ['auth.jwt', 'verified']], function () {
+Route::group(['middleware' => ['auth.jwt', 'verified', 'can_use_route']], function () {
 
     Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'CustomerController@index']);

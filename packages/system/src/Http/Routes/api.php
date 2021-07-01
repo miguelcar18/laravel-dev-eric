@@ -11,6 +11,6 @@
 |
  */
 
-Route::group(['middleware' => ['auth.jwt', 'verified']], function () {
+Route::group(['middleware' => ['auth.jwt', 'verified', 'can_use_route']], function () {
 
 });
