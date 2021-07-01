@@ -18,7 +18,7 @@ class CreateUserHasGroupsTable extends Migration
         $groupsTable = config('acl.tables.groups', 'groups');
         Schema::create($userHasGroupsTable,
             function (Blueprint $table) use ($usersTable, $groupsTable) {
-                $table->bigInteger('user_id', false, true);
+                $table->uuid('user_id');
                 $table->bigInteger('group_id', false, true);
                 $table->foreign('user_id')
                     ->references('id')

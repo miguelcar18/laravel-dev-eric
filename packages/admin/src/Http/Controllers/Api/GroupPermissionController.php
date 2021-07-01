@@ -7,7 +7,6 @@ use EllipseSynergie\ApiResponse\Contracts\Response as ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Packages\Admin\Models\Group;
-use Packages\Admin\Models\GroupPermission;
 use Packages\Admin\Models\Permission;
 use Packages\Admin\Repositories\Datatables\GroupPermissionRepository;
 use Packages\Admin\Transformers\Datatables\GroupPermissionTransformer;

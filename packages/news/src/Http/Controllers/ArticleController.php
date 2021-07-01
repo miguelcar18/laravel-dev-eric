@@ -12,6 +12,12 @@ use Packages\News\Traits\Notification;
 class ArticleController extends Controller
 {
     use Notification;
+
+    //public function __construct()
+    //{
+    //    $this->authorizeResource(Article::class, 'post');
+    //}
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +25,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-//        $article = Article::orderBy('created_at', 'DESC')->paginate(8);
+        dd('anslfas');
+        if (auth()->user()->cannot('viewAny', Article::class)) {
+            abort(403);
+        }
 
         return view('news::articles.index');
     }
@@ -29,9 +38,13 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $author = Author::all()->pluck('name','id');
+        if ($request->user()->cannot('create', Article::class)) {
+            abort(403);
+        }
+
+        $author = Author::all()->pluck('name', 'id');
 //        $authors = Author::all();
         return view('news::articles.create')->with('author', $author);
     }
@@ -44,6 +57,10 @@ class ArticleController extends Controller
      */
     public function store(StoreRequest $request)
     {
+        if ($request->user()->cannot('update', Article::class)) {
+            abort(403);
+        }
+
         $article = new Article($request->all());
 //        dd($article);
         $article->save();
@@ -57,7 +74,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Article $article
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
@@ -73,12 +90,12 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Article $article
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
     {
-        $author = Author::all()->pluck('name','id');
+        $author = Author::all()->pluck('name', 'id');
         return view('news::articles.edit', compact('article', 'author'));
     }
 
@@ -86,7 +103,7 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  Article $article
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateRequest $request, Article $article)
@@ -105,7 +122,7 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Article $article
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
     public function destroy(Article $article)

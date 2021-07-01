@@ -5,11 +5,14 @@ namespace Packages\Admin\Http\Controllers;
 use Illuminate\Http\Request;
 use Packages\Admin\Models\Group;
 use Packages\Admin\Models\Permission;
+use Packages\Admin\Models\User;
 
 class GroupController extends Controller
 {
     public function index()
     {
+//        $g = Group::all();
+//        dd($g->users->name);
         return view('admin::group.index');
     }
 
@@ -60,5 +63,15 @@ class GroupController extends Controller
 //        $groups = Group::all()->pluck('slug','slug');
 //        dd($permission);
         return view('admin::group.groupPermission',compact('group','groups'));
+    }
+
+    public function group_user($group)
+    {
+//        dd($group->user());
+        $groups = Group::all()->pluck('slug','id');
+
+//        $groups = Group::all()->pluck('slug','slug');
+//        dd($permission);
+        return view('admin::group.groupUser',compact('group','groups'));
     }
 }

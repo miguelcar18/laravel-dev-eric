@@ -19,7 +19,7 @@ class CreateUserHasPermissionsTable extends Migration
         $usersTable = config('acl.tables.users', 'users');
         Schema::create($userHasPermissionTable,
             function (Blueprint $table) use ($permissionsTable, $usersTable) {
-                $table->bigInteger('user_id', false, true);
+                $table->uuid('user_id');
                 $table->bigInteger('permission_id', false, true);
                 $table->foreign('user_id')
                     ->references('id')

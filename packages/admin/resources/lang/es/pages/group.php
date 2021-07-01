@@ -23,6 +23,7 @@ return [
         'create' => 'Nuevo grupo',
         'edit' => 'Editar grupo',
         'assign_permission' => 'Asignar permiso',
+        'assign_user' => 'Agregar usuario',
         'destroy' => [
             'tooltip' => 'Eliminar grupo',
             'alert' => [
@@ -56,6 +57,12 @@ return [
         'page_title' => 'Asignar permiso',
         'page_header' => 'Asignar permiso',
         'breadcrumb' => 'Asignar permiso',
+    ],
+
+    'group_user' => [
+        'page_title' => 'Asignar usuario',
+        'page_header' => 'Asignar usuario',
+        'breadcrumb' => 'Asignar usuario',
     ],
 
     'fields' => [

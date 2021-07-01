@@ -15,7 +15,7 @@ class CreateGroupsTable extends Migration
     {
         $groupsTable = config('acl.tables.groups', 'groups');
         Schema::create($groupsTable, function (Blueprint $table) {
-            $table->uuid('id');
+            $table->bigIncrements('id');
             $table->string('name')->unique()->nullable(false);
             $table->string('slug')->unique()->nullable(false);
             $table->text('description')->nullable();

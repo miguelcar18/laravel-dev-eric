@@ -19,7 +19,7 @@
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('author', 'AuthorController');
 //        Route::resource('news_articles', ArticleController::class);
-    Route::resource('article', 'ArticleController');
+    Route::resource('article', 'ArticleController')->middleware('can:create');
     Route::resource('message', 'MessageController');
 //        Route::get('/traits/mail', [AuthorController::class,'mailNotify']);
     Route::get('/', function () {

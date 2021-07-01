@@ -31,4 +31,9 @@ class Permission extends BasePermission
     {
         return __($this->slug);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

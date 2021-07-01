@@ -49,6 +49,7 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom([
             __DIR__ . '/../database/migrations',
+            __DIR__ . '/../database/migrations/vendor/junges/acl',
         ]);
         $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang','admin');
         $this->loadJsonTranslationsFrom(__DIR__ . '/../../resources/lang');

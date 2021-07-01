@@ -16,17 +16,17 @@ class GroupTableSeeder extends Seeder
     {
         Group::firstOrCreate([
             'name' => 'superAdmin',
-            'slug' => 'superAdmin',
+            'slug' => 'system:superAdmin',
             'description' => 'superAdmin del sistema'
         ]);
         Group::firstOrCreate([
             'name' => 'dev',
-            'slug' => 'dev',
+            'slug' => 'system:dev',
             'description' => 'dev del sistema'
         ]);
         Group::firstOrCreate([
             'name' => 'creator',
-            'slug' => 'creator',
+            'slug' => 'system:creator',
             'description' => 'creator del sistema'
         ]);
     }

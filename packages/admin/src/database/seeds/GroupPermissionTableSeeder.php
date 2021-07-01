@@ -20,9 +20,9 @@ class GroupPermissionTableSeeder extends Seeder
         });
 
         $groupAdmin = Group::firstOrCreate([
-            'slug' => 'administrador',],
+            'slug' => 'admin:administrador',],
             [
-                'name' => 'administrador',
+                'name' => 'admin:administrador',
                 'description' => ''
             ]);
         $dataAdmin = [
@@ -91,9 +91,9 @@ class GroupPermissionTableSeeder extends Seeder
         $groupAdmin->assignPermissions($dataAdmin);
 
         $groupSupervisor = Group::firstOrCreate([
-            'slug' => 'supervisor',],
+            'slug' => 'admin:supervisor',],
             [
-                'name' => 'supervisor',
+                'name' => 'admin:supervisor',
                 'description' => ''
             ]);
         $dataSupervisor = [
@@ -148,9 +148,9 @@ class GroupPermissionTableSeeder extends Seeder
         $groupSupervisor->assignPermissions($dataSupervisor);
 
         $groupRedactor = Group::firstOrCreate([
-            'slug' => 'redactor',],
+            'slug' => 'admin:redactor',],
             [
-                'name' => 'redactor',
+                'name' => 'admin:redactor',
                 'description' => ''
             ]);
         $dataRedactor = [

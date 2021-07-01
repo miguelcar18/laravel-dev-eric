@@ -22,6 +22,7 @@ class AuthorController extends Controller
     public function index()
     {
 //        $authors = Author::orderBy('created_at', 'DESC')->paginate(8);
+//        dd(((auth()->user()->hasPermission('route:news::article.index') || auth()->user()->hasAnyGroup('news:admin','news:gerente','news:editor')) && auth()->user()->hasPermission('route:news::api.article.index')));
 
         return view('news::authors.index');
     }

@@ -24,6 +24,7 @@ class GroupTransformer extends Fractal\TransformerAbstract
             'delete_route' => route('admin::group.destroy', $group),
             'edit_route' => route('admin::group.edit', $group),
             'assign_permission_route' => route('admin::group.group_permission', $group),
+            'assign_user_route' => route('admin::group.group_user', $group),
             'name' => $group->name,
             'slug' => $group->slug,
             'description' => $group->description,

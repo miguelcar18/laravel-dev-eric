@@ -49,4 +49,11 @@ class Author extends BaseModel
     {
         return (ucfirst($this->name) . ' ' . ucfirst($this->lastName));
     }
+
+    public function before(Author $author, $ability)
+    {
+        if($author->isAdministrator()){
+            return true;
+        }
+    }
 }

@@ -59,6 +59,13 @@
                 html+='><i class="fa fa-tags"></i></button> &nbsp;';
             // }
 
+            // if (data.can_assign) {
+                html+='<button onclick="location.href=\'' + data.assign_user_route + '\'"';
+                html+='class="btn btn-outline-info btn--icon"';
+                html+='title="{{ trans('admin::pages/group.index.assign_user') }}"';
+                html+='><i class="fa fa-tags"></i></button> &nbsp;';
+            // }
+
             // if (data.can_delete) {
                 html+='<button class="btn btn-outline-danger btn--icon"';
                 html+='title="{{ trans('admin::pages/group.index.destroy.tooltip') }}"';

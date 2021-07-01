@@ -20,7 +20,7 @@ class GroupPermissionTableSeeder extends Seeder
         });
 
         $groupSuperAdmin = Group::firstOrCreate([
-            'slug' => 'superAdmin',],
+            'slug' => 'system:superAdmin',],
             [
                 'name' => 'superAdmin',
                 'description' => ''
@@ -107,7 +107,7 @@ class GroupPermissionTableSeeder extends Seeder
         $groupSuperAdmin->assignPermissions($dataSuperAdmin);
 
         $groupDev = Group::firstOrCreate([
-            'slug' => 'dev',],
+            'slug' => 'system:dev',],
             [
                 'name' => 'dev',
                 'description' => ''
@@ -174,7 +174,7 @@ class GroupPermissionTableSeeder extends Seeder
         $groupDev->assignPermissions($dataDev);
 
         $groupCreator = Group::firstOrCreate([
-            'slug' => 'creator',],
+            'slug' => 'system:creator',],
             [
                 'name' => 'creator',
                 'description' => ''

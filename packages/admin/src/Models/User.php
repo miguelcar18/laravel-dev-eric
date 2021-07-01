@@ -3,6 +3,7 @@
 namespace Packages\Admin\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Junges\ACL\Traits\ACLWildcardsTrait;
@@ -11,8 +12,10 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable, UsersTrait, ACLWildcardsTrait;
+    use HasFactory, Notifiable, UsersTrait, ACLWildcardsTrait, SoftDeletes;
 
+//    public $incrementing = false;
+//    protected $keyType = 'string';
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +25,7 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
+        'id',
     ];
 
     /**
@@ -71,5 +75,15 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
+    }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
     }
 }

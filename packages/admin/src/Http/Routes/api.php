@@ -37,5 +37,8 @@ Route::group(['middleware' => ['auth.jwt', 'verified']], function () {
     Route::group(['prefix' => 'group', 'as' => 'group.'], function () {
         Route::get('/group_permission', ['as' => 'group_permission', 'uses' => 'GroupPermissionController@groupPermission']);
         Route::post('/assign_permission', ['as' => 'assign_permission', 'uses' => 'GroupPermissionController@assignPermission']);
+        Route::get('/group_user', ['as' => 'group_user', 'uses' => 'GroupUserController@groupUser']);
+        Route::post('/assign_user', ['as' => 'assign_user', 'uses' => 'GroupUserController@assignUser']);
+
     });
 });

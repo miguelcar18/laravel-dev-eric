@@ -45,4 +45,10 @@ class Group extends BaseGroup
     {
         return __($this->name);
     }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
+
