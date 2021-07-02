@@ -1,6 +1,6 @@
 <?php
 
-namespace Packages\Admin\Http\Middlewares;
+namespace Packages\Admin\Http\Middleware;
 
 use Closure;
 use Packages\Admin\Models\Permission;
